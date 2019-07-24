@@ -44,17 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Enum\FootballGameEnum\FootballGameTypeEnum.cs" />
     <Compile Include="Enum\LotteryTypeEnum.cs" />
-    <Compile Include="FootballGameModel\BaseFootballGame.cs" />
-    <Compile Include="FootballGameModel\HalfCourtNegativeDate.cs" />
-    <Compile Include="FootballGameModel\MatchScoreDate.cs" />
-    <Compile Include="FootballGameModel\MixedCustomsDate.cs" />
-    <Compile Include="FootballGameModel\TotalGoalsDate.cs" />
-    <Compile Include="FootballGameModel\WinOrLoseDate.cs" />
+    <Compile Include="Model\FootballGameModel\BaseFootballGame.cs" />
+    <Compile Include="Model\FootballGameModel\HalfCourtNegativeDate.cs" />
+    <Compile Include="Model\FootballGameModel\MatchScoreDate.cs" />
+    <Compile Include="Model\FootballGameModel\MixedCustomsDate.cs" />
+    <Compile Include="Model\FootballGameModel\TotalGoalsDate.cs" />
+    <Compile Include="Model\FootballGameModel\WinOrLoseDate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StaticModel\CrawlerUrl.cs" />
+    <Compile Include="Model\StaticModel\CrawlerUrl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
