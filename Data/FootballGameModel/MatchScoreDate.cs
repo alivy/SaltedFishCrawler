@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WorkFlow
+namespace Data.FootballGameModel
 {
     /// <summary>
-    /// 
+    /// 比分数据
     /// </summary>
-    public class Class1
+    public class MatchScoreDate : BaseFootballGame
     {
     }
 }

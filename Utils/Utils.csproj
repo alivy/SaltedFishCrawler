@@ -45,9 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Help\Http\Class1.cs" />
     <Compile Include="Help\Http\HttpHelper.cs" />
+    <Compile Include="Help\Http\HttpMethods.cs" />
     <Compile Include="Help\Logger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

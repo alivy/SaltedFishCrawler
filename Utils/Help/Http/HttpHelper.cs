@@ -27,8 +27,7 @@ namespace Utils.Help.Http
 
         /// <summary>
         /// 下载html
-        /// http://tool.sufeinet.com/HttpHelper.aspx
-        /// HttpWebRequest功能比较丰富，WebClient使用比较简单
+        /// 请求使用原始HttpWebRequest功能比较丰富，WebClient使用比较简单
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>

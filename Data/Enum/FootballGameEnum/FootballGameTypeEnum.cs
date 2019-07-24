@@ -28,9 +28,9 @@ namespace Data.Enum
         /// </summary>
         TotalGoals = 4,
         /// <summary>
-        /// 半全场
+        /// 半全场平负
         /// </summary>
-        DoubleResult = 5,
+        HalfCourtNegative = 5,
         /// <summary>
         /// 混合过关
         /// </summary>
