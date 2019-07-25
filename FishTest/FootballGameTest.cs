@@ -33,6 +33,7 @@ namespace FishTest
 
             search = new HalfCourtNegativeSearch();
             search.Process();
+            
         }
     }
 }

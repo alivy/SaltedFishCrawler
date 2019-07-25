@@ -11,5 +11,6 @@ namespace Data.FootballGameModel
     /// </summary>
     public class TotalGoalsDate : BaseFootballGame
     {
+        
     }
 }
