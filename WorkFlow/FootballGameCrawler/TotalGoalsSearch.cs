@@ -39,7 +39,7 @@ namespace WorkFlow.FootballGameCrawler
             jsonnew1 += "]";
             string status = object1["status"].ToString();
             string jsonend = "{\"data\":" + jsonnew1 + ",\"status\":" + status + "}";
-            winolostdata = new JavaScriptSerializer().Deserialize<TotalGoalsDate>(jsonend);
+            totalGoalsDate = new JavaScriptSerializer().Deserialize<TotalGoalsDate>(jsonend);
             return totalGoalsDate;
             ///此处编写实例对面业务逻辑      
             return new TotalGoalsDate();
