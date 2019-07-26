@@ -87,8 +87,135 @@ namespace Data.FootballGameModel.MatchScore
         public string weather_pic { get; set; }
         public List<match_info> match_info { get; set; }
     }
+    /// <summary>
+    /// 赔率数据
+    /// </summary>
     public class crs
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s1 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s2 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s3 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s4 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s5 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s6 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s7 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s8 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s9 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s10 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s11 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s12 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s13 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s14 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s15 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s16 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s17 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s18 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s19 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s20 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s21 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s22 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s23 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s24 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s25 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s26 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s27 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s28 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s29 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s30 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string s31 { get; set; }
         public string  p_code{ get; set; }
         public string o_type { get; set; }
         public string p_id { get; set; }
