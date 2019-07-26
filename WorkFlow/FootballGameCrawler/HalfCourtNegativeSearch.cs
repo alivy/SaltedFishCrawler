@@ -1,11 +1,14 @@
 ﻿using Data.Enum;
 using Data.FootballGameModel;
+using Data.FootballGameModel.HalfCourtNegative;
 using Data.StaticModel;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 
 namespace WorkFlow.FootballGameCrawler
 {
@@ -22,9 +25,25 @@ namespace WorkFlow.FootballGameCrawler
         }
         public override BaseFootballGame Process()
         {
+            HalfCourtNegativeDate halfCourtNegativeData = new HalfCourtNegativeDate();
             var json = ResultRequest();
+            json = json.Substring(0, json.Length - 2).Substring(8);
+            JObject object1 = JObject.Parse(json);
+            string jsonnew = object1["data"].ToString();
+            JObject object2 = JObject.Parse(jsonnew);
+            string jsonnew1 = "[";
+            foreach (JProperty jProperty in object2.Properties())
+            {
+                jsonnew1 += jProperty.Value + ",";
+            }
+            jsonnew1 = jsonnew1.TrimEnd(',');
+            jsonnew1 += "]";
+            string status = object1["status"].ToString();
+            string jsonend = "{\"data\":" + jsonnew1 + ",\"status\":" + status + "}";
+            halfCourtNegativeData = new JavaScriptSerializer().Deserialize<HalfCourtNegativeDate>(jsonend);
+            return halfCourtNegativeData;
             ///此处编写实例对面业务逻辑      
-            return new HalfCourtNegativeDate();
+            //return new HalfCourtNegativeDate();
         }
     }
 }
