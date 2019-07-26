@@ -1,5 +1,6 @@
 ﻿using Data.Enum;
 using Data.FootballGameModel;
+using Data.FootballGameModel.TotalGoals;
 using Data.StaticModel;
 using Newtonsoft.Json.Linq;
 using System;
@@ -42,7 +43,7 @@ namespace WorkFlow.FootballGameCrawler
             totalGoalsDate = new JavaScriptSerializer().Deserialize<TotalGoalsDate>(jsonend);
             return totalGoalsDate;
             ///此处编写实例对面业务逻辑      
-            return new TotalGoalsDate();
+           // return new TotalGoalsDate();
         }
     }
 }
