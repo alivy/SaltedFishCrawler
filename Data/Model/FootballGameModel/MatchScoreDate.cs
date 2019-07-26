@@ -18,13 +18,25 @@ namespace Data.FootballGameModel.MatchScore
 
     public class data
     {
+        /// <summary>
+        /// 赛事id
+        /// </summary>
         public string id { get; set; }
-
+        /// <summary>
+        /// 赛事编号
+        /// </summary>
         public string num { get; set; }
-
+        /// <summary>
+        /// 开赛日期
+        /// </summary>
         public string date { get; set; }
-
+        /// <summary>
+        /// 开赛时间
+        /// </summary>
         public string time { get; set; }
+        /// <summary>
+        /// 开赛日期
+        /// </summary>
         public string b_date { get; set; }
         public string status { get; set; }
         public string hot { get; set; }
@@ -36,19 +48,43 @@ namespace Data.FootballGameModel.MatchScore
         public string a_cn { get; set; }
         public string index_show { get; set; }
         public string show { get; set; }
+        /// <summary>
+        /// 赔率数据
+        /// </summary>
         public crs crs { get; set; }
         public string l_cn_abbr { get; set; }
+        /// <summary>
+        /// 主队
+        /// </summary>
         public string h_cn_abbr { get; set; }
+        /// <summary>
+        /// 客队
+        /// </summary>
         public string a_cn_abbr { get; set; }
+        /// <summary>
+        /// 主队球队
+        /// </summary>
         public string h_order { get; set; }
+        /// <summary>
+        /// 客队球队
+        /// </summary>
         public string a_order { get; set; }
         public string h_id_dc { get; set; }
         public string a_id_dc { get; set; }
         public string l_background_color { get; set; }
+        /// <summary>
+        /// 天气
+        /// </summary>
         public string weather { get; set; }
         public string weather_city { get; set; }
+        /// <summary>
+        /// 温度
+        /// </summary>
         public string temperature { get; set; }
-
+        /// <summary>
+        /// 天气图片地址
+        /// </summary>
+        public string weather_pic { get; set; }
         public List<match_info> match_info { get; set; }
     }
     public class crs
