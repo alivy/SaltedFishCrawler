@@ -240,6 +240,10 @@ namespace DAL
             using (var db = DBContext.CreateContext())
             {
                 var m_query = db.Set<T>().AsQueryable<T>();
+                if (where != null)
+                {
+                    m_query = m_query.Where(where);
+                }
                 return m_query.FirstOrDefault();
             }
         }

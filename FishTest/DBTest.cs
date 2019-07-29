@@ -15,6 +15,7 @@ namespace FishTest
             {
                 Name = "三狗子"
             });
+            var jieCaiTable = new BaseBLL<JieCaiTable>().FirstOrDefault(x => x.Name.Equals("三狗子"));
 
             var tt = new JieCaiTableBLL().QueryTset();
 
