@@ -57,6 +57,12 @@
     <Compile Include="Enum\LotteryTypeEnum.cs" />
     <Compile Include="Model\DBModel\DBContext.cs" />
     <Compile Include="Model\DBModel\JieCaiTable.cs" />
+    <Compile Include="Model\DBModel\tblFootballMatch.cs" />
+    <Compile Include="Model\DBModel\tblHalfCourtNegativehafu.cs" />
+    <Compile Include="Model\DBModel\tblMatchScorecrs.cs" />
+    <Compile Include="Model\DBModel\tblTotalGoalsttg.cs" />
+    <Compile Include="Model\DBModel\tblWinOrLosehad.cs" />
+    <Compile Include="Model\DBModel\tblWinOrLosehhad.cs" />
     <Compile Include="Model\FootballGameModel\BaseFootballGame.cs" />
     <Compile Include="Model\FootballGameModel\HalfCourtNegativeDate.cs" />
     <Compile Include="Model\FootballGameModel\MatchScoreDate.cs" />

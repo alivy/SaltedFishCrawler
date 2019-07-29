@@ -27,6 +27,17 @@ namespace Data.Model.DBModel
         }
         public virtual DbSet<JieCaiTable> JieCaiTable { get; set; }
 
+        public virtual DbSet<tblFootballMatch> tblFootballMatch { get; set; }
+
+        public virtual DbSet<tblWinOrLosehad> tblWinOrLosehad { get; set; }
+        public virtual DbSet<tblWinOrLosehhad> tblWinOrLosehhad { get; set; }
+
+        public virtual DbSet<tblTotalGoalsttg> tblTotalGoalsttg { get; set; }
+
+        public virtual DbSet<tblMatchScorecrs> tblMatchScorecrs { get; set; }
+
+        public virtual DbSet<tblHalfCourtNegativehafu> tblHalfCourtNegativehafu { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }

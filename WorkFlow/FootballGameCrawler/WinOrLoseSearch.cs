@@ -51,5 +51,10 @@ namespace WorkFlow.FootballGameCrawler
            // return new WinOrLoseDate();
         }
 
+        public void SysnWinOrLoseData()
+        {
+       
+
+        }
     }
 }
