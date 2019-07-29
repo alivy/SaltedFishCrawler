@@ -115,7 +115,7 @@ namespace Data.FootballGameModel.HalfCourtNegative
         /// </summary>
         public string dd { get; set; }
         /// <summary>
-        /// 平生赔率
+        /// 平胜赔率
         /// </summary>
         public string dh { get; set; }
         /// <summary>

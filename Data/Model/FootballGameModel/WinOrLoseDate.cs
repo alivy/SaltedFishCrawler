@@ -49,11 +49,11 @@ namespace Data.FootballGameModel
         public string index_show { get; set; }
         public string show { get; set; }
         /// <summary>
-        /// 主队赔率数据
+        /// 客队赔率数据
         /// </summary>
         public hhad hhad { get; set; }
         /// <summary>
-        /// 客队赔率数据
+        /// 主队赔率数据
         /// </summary>
         public had had { get; set; }
 

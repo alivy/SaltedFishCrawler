@@ -93,35 +93,35 @@ namespace Data.FootballGameModel.MatchScore
     public class crs
     {
         /// <summary>
-        /// 
+        /// 负其他
         /// </summary>
         public string s1 { get; set; }
         /// <summary>
-        /// 
+        /// 平其他
         /// </summary>
         public string s2 { get; set; }
         /// <summary>
-        /// 
+        /// 胜其他
         /// </summary>
         public string s3 { get; set; }
         /// <summary>
-        /// 
+        /// 0：0
         /// </summary>
         public string s4 { get; set; }
         /// <summary>
-        /// 
+        /// 0：1
         /// </summary>
         public string s5 { get; set; }
         /// <summary>
-        /// 
+        /// 0：2
         /// </summary>
         public string s6 { get; set; }
         /// <summary>
-        /// 
+        /// 0：3
         /// </summary>
         public string s7 { get; set; }
         /// <summary>
-        /// 
+        /// 0：4
         /// </summary>
         public string s8 { get; set; }
         /// <summary>
