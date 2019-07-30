@@ -69,6 +69,8 @@
     <Compile Include="Model\FootballGameModel\MixedCustomsDate.cs" />
     <Compile Include="Model\FootballGameModel\TotalGoalsDate.cs" />
     <Compile Include="Model\FootballGameModel\WinOrLoseDate.cs" />
+    <Compile Include="Model\ViewModel\ReqFootballMatch.cs" />
+    <Compile Include="Model\ViewModel\ResWinOrLose.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\StaticModel\CrawlerUrl.cs" />
   </ItemGroup>

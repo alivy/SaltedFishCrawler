@@ -6,9 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using Data.Model.ViewModel;
+
 namespace BLL
 {
-   public  class FootballMatchBLL: BaseBLL<tblFootballMatch>
+    public class FootballMatchBLL : BaseBLL<tblFootballMatch>
     {
         public override void SetDal()
         {
@@ -22,6 +24,11 @@ namespace BLL
         public tblFootballMatch GetMatchInfo(string id)
         {
             return (_baseDal as FootballMatchDal).GetMatchInfo(id);
+        }
+
+        public List<ResWinOrLose> GetWinOrLoseList()
+        {
+            return (_baseDal as FootballMatchDal).GetWinOrLoseList();
         }
     }
 }
