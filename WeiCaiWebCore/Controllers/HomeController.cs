@@ -8,9 +8,14 @@ namespace WeiCaiWebCore.Controllers
 {
     public class HomeController : Controller
     {
+        /// <summary>
+        /// 接口A
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
-            return View();
+            var obj = new { a = 1 };
+            return Json(obj);
         }
 
         public ActionResult About()
