@@ -46,9 +46,8 @@ namespace FishTest
         [TestMethod]
         public void WinOrLoseTest()
         {
-            var winOrLose = new WinOrLoseDate();
             ISearch search = new WinOrLoseSearch();
-            winOrLose = (WinOrLoseDate)search.Process();
+            var winOrLose = (WinOrLoseDate)search.Process();
 
             if (winOrLose != null && winOrLose.data.Count > 0)
             {
@@ -134,9 +133,8 @@ namespace FishTest
         [TestMethod]
         public void TotalGoalsTest()
         {
-            var total = new TotalGoalsDate();
             ISearch search = new TotalGoalsSearch();
-            total = (TotalGoalsDate)search.Process();
+            var total = (TotalGoalsDate)search.Process();
 
             if (total != null && total.data.Count > 0)
             {
@@ -180,9 +178,8 @@ namespace FishTest
         [TestMethod]
         public void MatchScoreTest()
         {
-            var match = new MatchScoreDate();
             ISearch search = new MatchScoreSearch();
-            match = (MatchScoreDate)search.Process();
+            var match = (MatchScoreDate)search.Process();
 
             if (match != null && match.data.Count > 0)
             {
@@ -269,13 +266,12 @@ namespace FishTest
         [TestMethod]
         public void HalfCourtNegativeTest()
         {
-            var match = new HalfCourtNegativeDate();
             ISearch search = new HalfCourtNegativeSearch();
-            match = (HalfCourtNegativeDate)search.Process();
+            var half = (HalfCourtNegativeDate)search.Process();
 
-            if (match != null && match.data.Count > 0)
+            if (half != null && half.data.Count > 0)
             {
-                foreach (Data.FootballGameModel.HalfCourtNegative.data item in match.data)
+                foreach (Data.FootballGameModel.HalfCourtNegative.data item in half.data)
                 {
                     var tt1 = new BaseBLL<tblHalfCourtNegativehafu>().FirstOrDefault(x => x.id.Equals(item.id));
                     if (tt1 != null)
