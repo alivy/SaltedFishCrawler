@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Help\CustomAttribute\RemarkAttribute.cs" />
     <Compile Include="Help\Http\HttpHelper.cs" />
     <Compile Include="Help\Http\HttpMethods.cs" />
     <Compile Include="Help\Logger.cs" />
