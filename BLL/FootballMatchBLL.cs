@@ -30,5 +30,20 @@ namespace BLL
         {
             return (_baseDal as FootballMatchDal).GetWinOrLoseList();
         }
+
+        public List<ResTotalGoals> GetTotalGoalsList()
+        {
+            return (_baseDal as FootballMatchDal).GetTotalGoalsList();
+        }
+
+        public List<ResMatchScore> GetMatchScoreList()
+        {
+            return (_baseDal as FootballMatchDal).GetMatchScoreList();
+        }
+
+        public List<ResHalfCourtNegative> GetHalfCourtNegativeList()
+        {
+            return (_baseDal as FootballMatchDal).GetHalfCourtNegativeList();
+        }
     }
 }
