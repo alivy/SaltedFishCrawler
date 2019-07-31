@@ -27,13 +27,40 @@ namespace WeiCaiWebCore.Controllers
             }
             if (football != null)
             {
+                FootballMatchBLL bll = new FootballMatchBLL();
                 if (football.FootballGameType == (int)FootballGameTypeEnum.WinOrLose)
                 {
-                    FootballMatchBLL bll = new FootballMatchBLL();
                     var winorlose = bll.GetWinOrLoseList();
                     if (winorlose != null && winorlose.Count > 0)
                     {
                         var result = ResMessage.CreatMessage(ResultMessageEnum.Success, winorlose);
+                        return Json(result);
+                    }
+                }
+                else if (football.FootballGameType == (int)FootballGameTypeEnum.TotalGoals)
+                {
+                    var totalGoals = bll.GetWinOrLoseList();
+                    if (totalGoals != null && totalGoals.Count > 0)
+                    {
+                        var result = ResMessage.CreatMessage(ResultMessageEnum.Success, totalGoals);
+                        return Json(result);
+                    }
+                }
+                else if (football.FootballGameType == (int)FootballGameTypeEnum.Score)
+                {
+                    var score = bll.GetWinOrLoseList();
+                    if (score != null && score.Count > 0)
+                    {
+                        var result = ResMessage.CreatMessage(ResultMessageEnum.Success, score);
+                        return Json(result);
+                    }
+                }
+                else if (football.FootballGameType == (int)FootballGameTypeEnum.HalfCourtNegative)
+                {
+                    var half = bll.GetWinOrLoseList();
+                    if (half != null && half.Count > 0)
+                    {
+                        var result = ResMessage.CreatMessage(ResultMessageEnum.Success, half);
                         return Json(result);
                     }
                 }

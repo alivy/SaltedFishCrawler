@@ -152,16 +152,17 @@ namespace DAL
                                             a.weather,
                                             a.temperature,
                                             a.weather_pic,
-                                            b.s0,
-                                            b.s1,
-                                            b.s2,
-                                            b.s3,
-                                            b.s4,
-                                            b.s5,
-                                            b.s6,
-                                            b.s7
+                                            b.aa,
+                                            b.ad,
+                                            b.ah,
+                                            b.da,
+                                            b.dd,
+                                            b.dh,
+                                            b.ha,
+                                            b.hd,
+                                            b.hh
                                              from tblFootballMatch a 
-                                            left join tblTotalGoalsttg b on a.id=b.id");
+                                            left join tblHalfCourtNegativehafu b on a.id=b.id");
                 var half = db.Database.SqlQuery<ResHalfCourtNegative>(sql).ToList();
                 return half;
             }
