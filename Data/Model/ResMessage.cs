@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
-using Utils.Help.CustomAttribute;
+using Utils.CustomAttribute;
+
 
 namespace ViewModel
 {
@@ -11,10 +12,12 @@ namespace ViewModel
         /// </summary>
         public int code { get; set; }
         /// <summary>
-        /// 
+        /// 状态消息
         /// </summary>
         public string msg { get; set; }
-
+        /// <summary>
+        /// 数据对象
+        /// </summary>
         public object data { get; set; }
 
         public static ResMessage CreatMessage(Enum em)
@@ -34,7 +37,18 @@ namespace ViewModel
             {
                 code = Convert.ToInt32(em),
                 msg = msg,
-                data = ""
+                data = string.Empty
+            };
+        }
+
+
+        public static ResMessage CreatMessage(Enum em, object data)
+        {
+            return new ResMessage
+            {
+                code = Convert.ToInt32(em),
+                msg = em.GetRemark(),
+                data = data ?? ""
             };
         }
 

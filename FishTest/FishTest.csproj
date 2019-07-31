@@ -62,8 +62,9 @@
   <ItemGroup>
     <Compile Include="FootballGameTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="JsonTransTest.cs" />
     <Compile Include="DBTest.cs" />
+    <Compile Include="ResMessageTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

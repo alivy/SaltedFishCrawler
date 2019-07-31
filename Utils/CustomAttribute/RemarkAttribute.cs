@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace Utils.Help.CustomAttribute
+namespace Utils.CustomAttribute
 {
     public class RemarkAttribute : Attribute
     {
@@ -32,10 +32,18 @@ namespace Utils.Help.CustomAttribute
 
         public static string Remark(Enum eValue)
         {
-            Type type = eValue.GetType();
-            FieldInfo field = type.GetField(eValue.ToString());
-            var remarkAttribute = (RemarkAttribute)field.GetCustomAttribute(typeof(RemarkAttribute));
-            return remarkAttribute.Remark;
+            try
+            {
+                Type type = eValue.GetType();
+                FieldInfo field = type.GetField(eValue.ToString());
+                var remarkAttribute = (RemarkAttribute)field.GetCustomAttribute(typeof(RemarkAttribute));
+                return remarkAttribute.Remark;
+            }
+            catch (Exception)
+            {
+                return string.Empty;
+            }
+           
         }
     }
 }

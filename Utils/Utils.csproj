@@ -36,7 +36,13 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,10 +51,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Help\CustomAttribute\RemarkAttribute.cs" />
+    <Compile Include="Cache\CacheManager.cs" />
+    <Compile Include="Cache\ConstString.cs" />
+    <Compile Include="Cache\CookiesManager.cs" />
+    <Compile Include="Cache\CustomerCache.cs" />
+    <Compile Include="Cache\ICache.cs" />
+    <Compile Include="Cache\MemoryCacheCache.cs" />
+    <Compile Include="Cache\SessionManager.cs" />
+    <Compile Include="Encrypt\DESEncrypt.cs" />
+    <Compile Include="Encrypt\EncryptHelper.cs" />
+    <Compile Include="Expand\ModelStateExpand.cs" />
+    <Compile Include="CustomAttribute\RemarkAttribute.cs" />
+    <Compile Include="Help\DictionaryHelper.cs" />
+    <Compile Include="Help\Http\HttpPosts.cs" />
+    <Compile Include="Help\Http\AddFile.cs" />
+    <Compile Include="Help\Http\Client.cs" />
+    <Compile Include="Help\Http\ContentType.cs" />
     <Compile Include="Help\Http\HttpHelper.cs" />
     <Compile Include="Help\Http\HttpMethods.cs" />
+    <Compile Include="Help\Http\Other.cs" />
+    <Compile Include="Help\Http\Path.cs" />
+    <Compile Include="Help\Http\Server.cs" />
+    <Compile Include="Help\JsonHelper.cs" />
     <Compile Include="Help\Logger.cs" />
+    <Compile Include="Help\MailHelper.cs" />
+    <Compile Include="Help\Md5Algorithm.cs" />
+    <Compile Include="Help\MessageSend.cs" />
+    <Compile Include="Help\NetworkHelper.cs" />
+    <Compile Include="Help\RegExpStr.cs" />
+    <Compile Include="Help\RSAFromPkcs8.cs" />
+    <Compile Include="Help\RSAHelper.cs" />
+    <Compile Include="Help\SessionManager.cs" />
+    <Compile Include="Help\SignHelper.cs" />
+    <Compile Include="Help\StringHelper.cs" />
+    <Compile Include="Help\ValidateHelper.cs" />
+    <Compile Include="Help\WebHelper.cs" />
+    <Compile Include="Help\XmlHelper.cs" />
+    <Compile Include="OAuth\OAuth2API.cs" />
+    <Compile Include="Help\XMLSerializeHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
