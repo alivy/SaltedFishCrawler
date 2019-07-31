@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Utils.Expand;
 
 namespace WeiCaiWebCore.Controllers
 {
@@ -19,6 +20,11 @@ namespace WeiCaiWebCore.Controllers
        /// <returns></returns>
         public ActionResult GetFootballMatch(ReqFootballMatch football)
         {
+            if (!ModelState.IsValid)
+            {
+                var errorMsg = ModelState.FristModelStateErrors().FirstOrDefault(); ;
+                return Json(ResMessage.CreatMessage(ResultMessageEnum.ValidateError, errorMsg));
+            }
             if (football != null)
             {
                 FootballMatchBLL bll = new FootballMatchBLL();
