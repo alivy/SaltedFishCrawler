@@ -1,4 +1,4 @@
-﻿using Data.Enum;
+﻿using Data.Enums;
 using Data.FootballGameModel;
 using Data.StaticModel;
 using HtmlAgilityPack;

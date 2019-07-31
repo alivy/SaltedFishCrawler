@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Reflection;
 using Utils.CustomAttribute;
 
 
-namespace ViewModel
+namespace Data.ViewModel
 {
     public class ResMessage
     {

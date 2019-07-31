@@ -56,10 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enum\ResultMessageEnum.cs" />
-    <Compile Include="Enum\FootballGameEnum\FootballGameTypeEnum.cs" />
-    <Compile Include="Enum\LotteryTypeEnum.cs" />
-    <Compile Include="Model\RequestResult.cs" />
+    <Compile Include="Enums\ResultMessageEnum.cs" />
+    <Compile Include="Enums\FootballGameEnum\FootballGameTypeEnum.cs" />
+    <Compile Include="Enums\LotteryTypeEnum.cs" />
+    <Compile Include="Model\ViewModel\RequestResult.cs" />
     <Compile Include="Model\DBModel\DBContext.cs" />
     <Compile Include="Model\DBModel\JieCaiTable.cs" />
     <Compile Include="Model\DBModel\tblFootballMatch.cs" />
@@ -74,9 +74,9 @@
     <Compile Include="Model\FootballGameModel\MixedCustomsDate.cs" />
     <Compile Include="Model\FootballGameModel\TotalGoalsDate.cs" />
     <Compile Include="Model\FootballGameModel\WinOrLoseDate.cs" />
-	 <Compile Include="Model\ViewModel\ReqFootballMatch.cs" />
+    <Compile Include="Model\ViewModel\ReqFootballMatch.cs" />
     <Compile Include="Model\ViewModel\ResWinOrLose.cs" />
-	 <Compile Include="Model\ResMessage.cs" />
+    <Compile Include="Model\ViewModel\ResMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\StaticModel\CrawlerUrl.cs" />
   </ItemGroup>

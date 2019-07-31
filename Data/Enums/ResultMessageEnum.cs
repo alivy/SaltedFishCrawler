@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Utils.CustomAttribute;
 
 
-namespace Data.Enum
+namespace Data.Enums
 {
     /// <summary>
     /// 返回消息的枚举

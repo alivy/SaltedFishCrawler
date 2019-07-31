@@ -8,6 +8,6 @@ namespace Data.Model.ViewModel
 {
     public class ReqFootballMatch
     {
-        public string Type { get; set; }
+        public int FootballGameType { get; set; }
     }
 }
