@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Enum
+namespace Data.Enums
 {
     /// <summary>
     /// 竞彩足球玩法类型

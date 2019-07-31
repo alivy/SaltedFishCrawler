@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 using BLL;
-using Data.Enum;
+using Data.Enums;
 using Data.FootballGameModel;
 using Data.FootballGameModel.HalfCourtNegative;
 using Data.FootballGameModel.MatchScore;

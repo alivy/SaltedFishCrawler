@@ -1,5 +1,7 @@
 ﻿using BLL;
+using Data.Enums;
 using Data.Model.ViewModel;
+using Data.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,22 +12,27 @@ namespace WeiCaiWebCore.Controllers
 {
     public class FootballMatchController : Controller
     {
-        // GET: FootballMatch
+       /// <summary>
+       /// 赛事数据查询
+       /// </summary>
+       /// <param name="football"></param>
+       /// <returns></returns>
         public ActionResult GetFootballMatch(ReqFootballMatch football)
         {
             if (football != null)
             {
-                if (football.Type == "Winorlose")
+                if (football.FootballGameType == (int)FootballGameTypeEnum.WinOrLose)
                 {
                     FootballMatchBLL bll = new FootballMatchBLL();
                     var winorlose = bll.GetWinOrLoseList();
                     if (winorlose != null && winorlose.Count > 0)
                     {
-                        return Json(winorlose);
+                        var result = ResMessage.CreatMessage(ResultMessageEnum.Success, winorlose);
+                        return Json(result);
                     }
                 }
             }
-            return Json("暂无赛事数据");
+            return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "暂无赛事数据"));
         }
     }
 }

@@ -153,7 +153,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\FootballMatchController.cs" />
+	 <Compile Include="Controllers\FootballMatchController.cs" />
+	   <Compile Include="Controllers\BaseAction\RequestActionResult.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -222,9 +223,21 @@
       <Project>{C8078B9C-76F8-4E9A-8C1F-86B351E0AEDA}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{6a50df0d-3b2a-4172-99eb-ab3cdb4c603e}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{0FFCB27C-A0A2-4FF3-9E86-344A12305F06}</Project>
       <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{89443ed2-27fd-4460-8f4f-7033cf9fff26}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkFlow\WorkFlow.csproj">
+      <Project>{24f876af-86b1-400a-abe9-074d5361af88}</Project>
+      <Name>WorkFlow</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

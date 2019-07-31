@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using Data.Enum;
+using Data.Enums;
 using Data.FootballGameModel;
 using Data.StaticModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
