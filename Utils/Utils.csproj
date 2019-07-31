@@ -73,6 +73,7 @@
     <Compile Include="Help\Http\Path.cs" />
     <Compile Include="Help\Http\Server.cs" />
     <Compile Include="Help\JsonHelper.cs" />
+    <Compile Include="Help\Log.cs" />
     <Compile Include="Help\Logger.cs" />
     <Compile Include="Help\MailHelper.cs" />
     <Compile Include="Help\Md5Algorithm.cs" />
@@ -92,6 +93,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Config\log.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\logger.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
