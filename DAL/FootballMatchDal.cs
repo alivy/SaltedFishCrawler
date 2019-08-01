@@ -41,12 +41,11 @@ namespace DAL
                                             b.a,
                                             b.d,
                                             b.h,
-                                            c.a b,
-                                            c.d e,
-                                            c.h i
+                                            b.b,
+                                            b.e,
+                                            b.i 
                                              from tblFootballMatch a 
-                                            left join tblWinOrLosehad b on a.id=b.id
-                                            left join tblWinOrLosehhad c on a.id=c.id");
+                                            left join tblWinOrLosehad b on a.id=b.id");
                 var winOrLose = db.Database.SqlQuery<ResWinOrLose>(sql).ToList();
                 return winOrLose;
             }

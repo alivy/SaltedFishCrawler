@@ -150,6 +150,18 @@ namespace Data.FootballGameModel
         /// </summary>
         public string h { get; set; }
 
+        /// <summary>
+        /// 客队负赔率
+        /// </summary>
+        public string b { get; set; }
+        /// <summary>
+        /// 客队打平赔率
+        /// </summary>
+        public string e { get; set; }
+        /// <summary>
+        /// 客队胜赔率
+        /// </summary>
+        public string i { get; set; }
         public string goalline { get; set; }
 
         public string p_code { get; set; }

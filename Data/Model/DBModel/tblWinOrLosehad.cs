@@ -18,5 +18,10 @@ namespace Data.Model.DBModel
         public string d { get; set; }
         public string h { get; set; }
 
+        public string b { get; set; }
+        public string e { get; set; }
+        public string i { get; set; }
+
+
     }
 }

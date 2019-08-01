@@ -66,6 +66,9 @@ namespace BLL
                         race.bfOdds.a = item.a;
                         race.bfOdds.d = item.d;
                         race.bfOdds.h = item.h;
+                        race.bfOdds.b = item.b;
+                        race.bfOdds.e = item.e;
+                        race.bfOdds.i = item.i;
                         list.dayRaceVoList[i].raceVoList.Add(race);
                         strdate = "1";
 
@@ -93,6 +96,9 @@ namespace BLL
                 race.bfOdds.a = item.a;
                 race.bfOdds.d = item.d;
                 race.bfOdds.h = item.h;
+                race.bfOdds.b = item.b;
+                race.bfOdds.e = item.e;
+                race.bfOdds.i = item.i;
                 day.raceVoList.Add(race);
 
                 list.dayRaceVoList.Add(day);
@@ -404,7 +410,7 @@ namespace BLL
                 {
                     var tt = new FootballMatchBLL().GetMatchInfo(item.id);
                     var tt1 = new BaseBLL<tblWinOrLosehad>().FirstOrDefault(x => x.id.Equals(item.id));
-                    var tt2 = new BaseBLL<tblWinOrLosehhad>().FirstOrDefault(x => x.id.Equals(item.id));
+                   // var tt2 = new BaseBLL<tblWinOrLosehhad>().FirstOrDefault(x => x.id.Equals(item.id));
                     if (tt != null)
                     {
                         tt.num = item.num;
@@ -445,6 +451,9 @@ namespace BLL
                         tt1.a = item.had.a;
                         tt1.d = item.had.d;
                         tt1.h = item.had.h;
+                        tt1.b = item.had.b;
+                        tt1.e = item.had.e;
+                        tt1.i = item.had.i;
                         new BaseBLL<tblWinOrLosehad>().UpdateEntity(tt1);
                     }
                     else
@@ -454,27 +463,30 @@ namespace BLL
                             id = item.id,
                             a = item.had.a,
                             d = item.had.d,
-                            h = item.had.h
+                            h = item.had.h,
+                            b = item.hhad.a,
+                            e = item.hhad.d,
+                            i = item.hhad.h
                         });
                     }
-                    if (tt2 != null)
-                    {
-                        tt2.id = item.id;
-                        tt2.a = item.hhad.a;
-                        tt2.d = item.hhad.d;
-                        tt2.h = item.hhad.h;
-                        new BaseBLL<tblWinOrLosehhad>().UpdateEntity(tt2);
-                    }
-                    else
-                    {
-                        new BaseBLL<tblWinOrLosehhad>().AddEntity(new tblWinOrLosehhad
-                        {
-                            id = item.id,
-                            a = item.hhad.a,
-                            d = item.hhad.d,
-                            h = item.hhad.h
-                        });
-                    }
+                    //if (tt2 != null)
+                    //{
+                    //    tt2.id = item.id;
+                    //    tt2.a = item.hhad.a;
+                    //    tt2.d = item.hhad.d;
+                    //    tt2.h = item.hhad.h;
+                    //    new BaseBLL<tblWinOrLosehhad>().UpdateEntity(tt2);
+                    //}
+                    //else
+                    //{
+                    //    new BaseBLL<tblWinOrLosehhad>().AddEntity(new tblWinOrLosehhad
+                    //    {
+                    //        id = item.id,
+                    //        a = item.hhad.a,
+                    //        d = item.hhad.d,
+                    //        h = item.hhad.h
+                    //    });
+                    //}
                 }
 
             }
