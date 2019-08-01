@@ -393,7 +393,7 @@ namespace BLL
         /// <summary>
         /// 同步最新赛事和胜平负赔率
         /// </summary>
-        public void WinOrLoseTest()
+        public void SysnWinOrLose()
         {
             ISearch search = new WinOrLoseSearch();
             var winOrLose = (WinOrLoseDate)search.Process();
@@ -481,7 +481,7 @@ namespace BLL
         /// <summary>
         /// 同步总进球数赔率数据
         /// </summary>
-        public void TotalGoalsTest()
+        public void SysnTotalGoals()
         {
             ISearch search = new TotalGoalsSearch();
             var total = (TotalGoalsDate)search.Process();
@@ -525,7 +525,7 @@ namespace BLL
         /// <summary>
         /// 同步比分赔率数据
         /// </summary>
-        public void MatchScoreTest()
+        public void SysnMatchScore()
         {
             ISearch search = new MatchScoreSearch();
             var match = (MatchScoreDate)search.Process();
@@ -612,7 +612,7 @@ namespace BLL
         /// <summary>
         /// 同步半全场平负赔率数据
         /// </summary>
-        public void HalfCourtNegativeTest()
+        public void SysnHalfCourtNegative()
         {
             ISearch search = new HalfCourtNegativeSearch();
             var half = (HalfCourtNegativeDate)search.Process();
