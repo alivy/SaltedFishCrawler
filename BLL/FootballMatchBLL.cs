@@ -435,7 +435,9 @@ namespace BLL
                             a_order = item.a_order,
                             weather = item.weather,
                             temperature = item.temperature,
-                            weather_pic = item.weather_pic
+                            weather_pic = item.weather_pic,
+                            l_cn=item.l_cn,
+                            l_cn_abbr=item.l_cn_abbr
                         });
                     }
                     if (tt1 != null)
