@@ -76,6 +76,7 @@
     <Compile Include="Model\FootballGameModel\TotalGoalsDate.cs" />
     <Compile Include="Model\FootballGameModel\WinOrLoseDate.cs" />
     <Compile Include="Model\ViewModel\ReqFootballMatch.cs" />
+    <Compile Include="Model\ViewModel\ResFootMatchBase.cs" />
     <Compile Include="Model\ViewModel\ResHalfCourtNegative.cs" />
     <Compile Include="Model\ViewModel\ResMatchScore.cs" />
     <Compile Include="Model\ViewModel\ResTotalGoals.cs" />

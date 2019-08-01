@@ -29,7 +29,8 @@ namespace Data.Model.ViewModel
         public string temperature { get; set; }
 
         public string weather_pic { get; set; }
-
+        public string l_cn { get; set; }
+        public string l_cn_abbr { get; set; }
         public string aa { get; set; }
         public string ad { get; set; }
         public string ah { get; set; }

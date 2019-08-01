@@ -31,7 +31,7 @@ namespace WeiCaiWebCore.Controllers
                 if (football.FootballGameType == (int)FootballGameTypeEnum.WinOrLose)
                 {
                     var winorlose = bll.GetWinOrLoseList();
-                    if (winorlose != null && winorlose.Count > 0)
+                    if (winorlose != null)
                     {
                         var result = ResMessage.CreatMessage(ResultMessageEnum.Success, winorlose);
                         return Json(result);
@@ -39,8 +39,8 @@ namespace WeiCaiWebCore.Controllers
                 }
                 else if (football.FootballGameType == (int)FootballGameTypeEnum.TotalGoals)
                 {
-                    var totalGoals = bll.GetWinOrLoseList();
-                    if (totalGoals != null && totalGoals.Count > 0)
+                    var totalGoals = bll.GetTotalGoalsList();
+                    if (totalGoals != null)
                     {
                         var result = ResMessage.CreatMessage(ResultMessageEnum.Success, totalGoals);
                         return Json(result);
@@ -48,8 +48,8 @@ namespace WeiCaiWebCore.Controllers
                 }
                 else if (football.FootballGameType == (int)FootballGameTypeEnum.Score)
                 {
-                    var score = bll.GetWinOrLoseList();
-                    if (score != null && score.Count > 0)
+                    var score = bll.GetMatchScoreList();
+                    if (score != null)
                     {
                         var result = ResMessage.CreatMessage(ResultMessageEnum.Success, score);
                         return Json(result);
@@ -57,8 +57,8 @@ namespace WeiCaiWebCore.Controllers
                 }
                 else if (football.FootballGameType == (int)FootballGameTypeEnum.HalfCourtNegative)
                 {
-                    var half = bll.GetWinOrLoseList();
-                    if (half != null && half.Count > 0)
+                    var half = bll.GetHalfCourtNegativeList();
+                    if (half != null)
                     {
                         var result = ResMessage.CreatMessage(ResultMessageEnum.Success, half);
                         return Json(result);

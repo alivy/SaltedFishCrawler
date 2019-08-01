@@ -31,10 +31,11 @@ namespace Data.Model.ViewModel
        
         public string weather_pic { get; set; }
 
+        public string l_cn { get; set; }
+        public string l_cn_abbr { get; set; }
         public string a { get; set; }
         public string d { get; set; }
         public string h { get; set; }
-
         public string b { get; set; }
         public string e { get; set; }
         public string i { get; set; }

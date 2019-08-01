@@ -36,5 +36,10 @@ namespace Data.Model.DBModel
         public string temperature { get; set; }
         [StringLength(100)]
         public string weather_pic { get; set; }
+        [StringLength(100)]
+        public string l_cn { get; set; }
+        [StringLength(100)]
+        public string l_cn_abbr { get; set; }
+
     }
 }
