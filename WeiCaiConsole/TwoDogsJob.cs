@@ -1,4 +1,5 @@
-﻿using Quartz;
+﻿using BLL;
+using Quartz;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,11 @@ namespace WeiCaiConsole
         /// </summary>
         public void Process()
         {
+            var football = new FootballMatchBLL();
+            football.SysnWinOrLose();
+            football.SysnTotalGoals();
+            football.SysnMatchScore();
+            football.SysnHalfCourtNegative();
             Console.WriteLine("二狗子过来吃屎了!");
         }
     }

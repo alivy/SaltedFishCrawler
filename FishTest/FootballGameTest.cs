@@ -27,17 +27,17 @@ namespace FishTest
         [TestMethod]
         public void SearchTest()
         {
-            ISearch search = new WinOrLoseSearch();
-            search.Process();
+            //ISearch search = new WinOrLoseSearch();
+            //search.Process();
 
-            search = new TotalGoalsSearch();
-            search.Process();
+            //search = new TotalGoalsSearch();
+            //search.Process();
 
-            search = new MatchScoreSearch();
-            search.Process();
+            //search = new MatchScoreSearch();
+            //search.Process();
 
-            search = new HalfCourtNegativeSearch();
-            search.Process();
+            //search = new HalfCourtNegativeSearch();
+            //search.Process();
 
         }
         /// <summary>
