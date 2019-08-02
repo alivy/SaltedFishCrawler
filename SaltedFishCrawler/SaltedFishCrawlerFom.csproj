@@ -84,6 +84,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{c8078b9c-76f8-4e9a-8c1f-86b351e0aeda}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FishTest\FishTest.csproj">
       <Project>{0D5C2E1E-2888-4B5A-9D20-5D2EA8ABAB7B}</Project>
       <Name>FishTest</Name>

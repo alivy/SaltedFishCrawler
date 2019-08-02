@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -92,6 +93,7 @@ namespace Data.FootballGameModel.MatchScore
     /// </summary>
     public class crs
     {
+        [DataMember(Order = 0, Name = "-1-a")]
         /// <summary>
         /// 负其他
         /// </summary>
