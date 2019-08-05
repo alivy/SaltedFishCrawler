@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Data.Enums;
 
 namespace Data.Model.ViewModel
 {
@@ -12,7 +13,7 @@ namespace Data.Model.ViewModel
         /// <summary>
         /// 足彩玩法类型
         /// </summary>
-        [Required(ErrorMessage = "足彩玩法不能为空")]      
-        public int FootballGameType { get; set; }
+        [Required(ErrorMessage = "足彩玩法不能为空")]
+        public int FootballGameType => (int)FootballGameTypeEnum.MixedCustoms;
     }
 }

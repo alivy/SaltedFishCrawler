@@ -64,6 +64,15 @@ namespace WeiCaiWebCore.Controllers
                         return Json(result);
                     }
                 }
+                else if (football.FootballGameType == (int)FootballGameTypeEnum.MixedCustoms)
+                {
+                    var all = bll.GetAllMatchOrOdds();
+                    if (all != null)
+                    {
+                        var result = ResMessage.CreatMessage(ResultMessageEnum.Success, all);
+                        return Json(result);
+                    }
+                }
             }
             return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "暂无赛事数据"));
         }

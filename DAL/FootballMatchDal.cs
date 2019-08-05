@@ -1,5 +1,6 @@
 ﻿using Data.Model.DBModel;
 using Data.Model.ViewModel;
+using Data.Model.ViewModel.MathOrOdds;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-   public class FootballMatchDal : BaseDal<tblFootballMatch>
+    public class FootballMatchDal : BaseDal<tblFootballMatch>
     {
         public tblFootballMatch GetMatchInfo(string id)
         {
@@ -166,6 +167,33 @@ namespace DAL
                 return half;
             }
         }
-        
+
+        public List<ResMatchOrOdds> GetAllMatchOrOdds()
+        {
+            using (var db = DBContext.CreateContext())
+            {
+                string sql = string.Format(@"SELECT a.id, a.num, a.date, a.time, a.h_cn_abbr
+	                                        , a.a_cn_abbr, a.h_order, a.a_order, a.weather, a.temperature
+	                                        , a.weather_pic, a.l_cn, a.l_cn_abbr, b.a, b.d
+	                                        , b.h, b.b, b.e, b.i, c.s0 AS ss0
+	                                        , c.s1 AS ss1, c.s2 AS ss2, c.s3 AS ss3, c.s4 AS ss4, c.s5 AS ss5
+	                                        , c.s6 AS ss6, c.s7 AS ss7, d.s1, d.s2, d.s3
+	                                        , d.s4, d.s5, d.s6, d.s7, d.s8
+	                                        , d.s9, d.s10, d.s11, d.s12, d.s13
+	                                        , d.s14, d.s15, d.s16, d.s17, d.s18
+	                                        , d.s19, d.s20, d.s21, d.s22, d.s23
+	                                        , d.s24, d.s25, d.s26, d.s27, d.s28
+	                                        , d.s29, d.s30, e.aa, e.ad, e.ah
+	                                        , e.da, e.dd, e.dh, e.ha, e.hd
+	                                        , e.hh
+                                        FROM tblFootballMatch a
+	                                        LEFT JOIN tblWinOrLosehad b ON a.id = b.id
+	                                        LEFT JOIN tblTotalGoalsttg c ON a.id = c.id
+	                                        LEFT JOIN tblMatchScorecrs d ON a.id = d.id
+	                                        LEFT JOIN tblHalfCourtNegativehafu e ON a.id = e.id");
+                var matchorodds = db.Database.SqlQuery<ResMatchOrOdds>(sql).ToList();
+                return matchorodds;
+            }
+        }
     }
 }

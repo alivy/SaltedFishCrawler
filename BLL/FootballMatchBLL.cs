@@ -11,6 +11,7 @@ using WorkFlow.FootballGameCrawler;
 using Data.FootballGameModel.TotalGoals;
 using Data.FootballGameModel.MatchScore;
 using Data.FootballGameModel.HalfCourtNegative;
+using Data.Model.ViewModel.MathOrOdds;
 
 namespace BLL
 {
@@ -389,6 +390,181 @@ namespace BLL
                 race.bfOdds.ha = item.ha;
                 race.bfOdds.hd = item.hd;
                 race.bfOdds.hh = item.hh;
+                day.raceVoList.Add(race);
+
+                list.dayRaceVoList.Add(day);
+            }
+            return list;
+        }
+
+        public ResFootMatchBase<string> GetAllMatchOrOdds()
+        {
+            var list = new ResFootMatchBase<string>();
+            list.dayRaceVoList = new List<dayRaceVoList<string>>();
+            foreach (ResMatchOrOdds item in (_baseDal as FootballMatchDal).GetAllMatchOrOdds())
+            {
+                string strdate = "";
+                var day = new dayRaceVoList<string>();
+                day.raceVoList = new List<raceVoList<string>>();
+                var race = new raceVoList<string>();
+                race.winorloseOdds = new Odds();
+                race.totalOdds = new TotalGoals();
+                race.scoreOdds = new MatchScore();
+                race.halfOdds = new HalfCourtNegative();
+                for (int i = 0; i < list.dayRaceVoList.Count(); i++)
+                {
+                    if (item.date == list.dayRaceVoList[i].date)
+                    {
+                        race.id = item.id;
+                        race.num = item.num;
+                        race.date = item.date;
+                        race.time = item.time;
+                        race.h_cn_abbr = item.h_cn_abbr;
+                        race.a_cn_abbr = item.a_cn_abbr;
+                        race.h_order = item.h_order;
+                        race.a_order = item.a_order;
+                        race.weather = item.weather;
+                        race.temperature = item.temperature;
+                        race.weather_pic = item.weather_pic;
+                        race.l_cn = item.l_cn;
+                        race.l_cn_abbr = item.l_cn_abbr;
+
+                        race.winorloseOdds.a = item.a;
+                        race.winorloseOdds.d = item.d;
+                        race.winorloseOdds.h = item.h;
+                        race.winorloseOdds.b = item.b;
+                        race.winorloseOdds.e = item.e;
+                        race.winorloseOdds.i = item.i;
+
+                         race.totalOdds.s0 = item.ss0;
+                         race.totalOdds.s1 = item.ss1;
+                         race.totalOdds.s2 = item.ss2;
+                         race.totalOdds.s3 = item.ss3;
+                         race.totalOdds.s4 = item.ss4;
+                         race.totalOdds.s5 = item.ss5;
+                         race.totalOdds.s6 = item.ss6;
+                         race.totalOdds.s7 = item.ss7;
+
+                        race.scoreOdds .s1 = item.s1;
+                        race.scoreOdds .s2 = item.s2;
+                        race.scoreOdds .s3 = item.s3;
+                        race.scoreOdds .s4 = item.s4;
+                        race.scoreOdds .s5 = item.s5;
+                        race.scoreOdds .s6 = item.s6;
+                        race.scoreOdds .s7 = item.s7;
+                        race.scoreOdds .s8 = item.s8;
+                        race.scoreOdds .s9 = item.s9;
+                        race.scoreOdds .s10 = item.s10;
+                        race.scoreOdds .s11 = item.s11;
+                        race.scoreOdds .s12 = item.s12;
+                        race.scoreOdds .s13 = item.s13;
+                        race.scoreOdds .s14 = item.s14;
+                        race.scoreOdds .s15 = item.s15;
+                        race.scoreOdds .s16 = item.s16;
+                        race.scoreOdds .s17 = item.s17;
+                        race.scoreOdds .s18 = item.s18;
+                        race.scoreOdds .s19 = item.s19;
+                        race.scoreOdds .s20 = item.s20;
+                        race.scoreOdds .s21 = item.s21;
+                        race.scoreOdds .s22 = item.s22;
+                        race.scoreOdds .s23 = item.s23;
+                        race.scoreOdds .s24 = item.s24;
+                        race.scoreOdds .s25 = item.s25;
+                        race.scoreOdds .s26 = item.s26;
+                        race.scoreOdds .s27 = item.s27;
+                        race.scoreOdds .s28 = item.s28;
+                        race.scoreOdds .s29 = item.s29;
+                        race.scoreOdds.s30 = item.s30;
+
+                        race.halfOdds .aa = item.aa;
+                        race.halfOdds .ad = item.ad;
+                        race.halfOdds .ah = item.ah;
+                        race.halfOdds .da = item.da;
+                        race.halfOdds .dd = item.dd;
+                        race.halfOdds .dh = item.dh;
+                        race.halfOdds .ha = item.ha;
+                        race.halfOdds .hd = item.hd;
+                        race.halfOdds.hh = item.hh;
+                        list.dayRaceVoList[i].raceVoList.Add(race);
+                        strdate = "1";
+
+                    }
+                }
+                if (strdate == "1")
+                {
+                    continue;
+                }
+                day.date = item.date;
+                day.week = item.num;
+                race.id = item.id;
+                race.num = item.num;
+                race.date = item.date;
+                race.time = item.time;
+                race.h_cn_abbr = item.h_cn_abbr;
+                race.a_cn_abbr = item.a_cn_abbr;
+                race.h_order = item.h_order;
+                race.a_order = item.a_order;
+                race.weather = item.weather;
+                race.temperature = item.temperature;
+                race.weather_pic = item.weather_pic;
+                race.l_cn = item.l_cn;
+                race.l_cn_abbr = item.l_cn_abbr;
+                race.winorloseOdds.a = item.a;
+                race.winorloseOdds.d = item.d;
+                race.winorloseOdds.h = item.h;
+                race.winorloseOdds.b = item.b;
+                race.winorloseOdds.e = item.e;
+                race.winorloseOdds.i = item.i;
+
+                race.totalOdds.s0 = item.ss0;
+                race.totalOdds.s1 = item.ss1;
+                race.totalOdds.s2 = item.ss2;
+                race.totalOdds.s3 = item.ss3;
+                race.totalOdds.s4 = item.ss4;
+                race.totalOdds.s5 = item.ss5;
+                race.totalOdds.s6 = item.ss6;
+                race.totalOdds.s7 = item.ss7;
+
+                race.scoreOdds.s1 = item.s1;
+                race.scoreOdds.s2 = item.s2;
+                race.scoreOdds.s3 = item.s3;
+                race.scoreOdds.s4 = item.s4;
+                race.scoreOdds.s5 = item.s5;
+                race.scoreOdds.s6 = item.s6;
+                race.scoreOdds.s7 = item.s7;
+                race.scoreOdds.s8 = item.s8;
+                race.scoreOdds.s9 = item.s9;
+                race.scoreOdds.s10 = item.s10;
+                race.scoreOdds.s11 = item.s11;
+                race.scoreOdds.s12 = item.s12;
+                race.scoreOdds.s13 = item.s13;
+                race.scoreOdds.s14 = item.s14;
+                race.scoreOdds.s15 = item.s15;
+                race.scoreOdds.s16 = item.s16;
+                race.scoreOdds.s17 = item.s17;
+                race.scoreOdds.s18 = item.s18;
+                race.scoreOdds.s19 = item.s19;
+                race.scoreOdds.s20 = item.s20;
+                race.scoreOdds.s21 = item.s21;
+                race.scoreOdds.s22 = item.s22;
+                race.scoreOdds.s23 = item.s23;
+                race.scoreOdds.s24 = item.s24;
+                race.scoreOdds.s25 = item.s25;
+                race.scoreOdds.s26 = item.s26;
+                race.scoreOdds.s27 = item.s27;
+                race.scoreOdds.s28 = item.s28;
+                race.scoreOdds.s29 = item.s29;
+                race.scoreOdds.s30 = item.s30;
+
+                race.halfOdds.aa = item.aa;
+                race.halfOdds.ad = item.ad;
+                race.halfOdds.ah = item.ah;
+                race.halfOdds.da = item.da;
+                race.halfOdds.dd = item.dd;
+                race.halfOdds.dh = item.dh;
+                race.halfOdds.ha = item.ha;
+                race.halfOdds.hd = item.hd;
+                race.halfOdds.hh = item.hh;
                 day.raceVoList.Add(race);
 
                 list.dayRaceVoList.Add(day);

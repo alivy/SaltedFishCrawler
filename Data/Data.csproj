@@ -60,6 +60,7 @@
     <Compile Include="Enums\ResultMessageEnum.cs" />
     <Compile Include="Enums\FootballGameEnum\FootballGameTypeEnum.cs" />
     <Compile Include="Enums\LotteryTypeEnum.cs" />
+    <Compile Include="Model\ViewModel\MathOrOdds\ResMatchOrOdds.cs" />
     <Compile Include="Model\ViewModel\RequestResult.cs" />
     <Compile Include="Model\DBModel\DBContext.cs" />
     <Compile Include="Model\DBModel\JieCaiTable.cs" />

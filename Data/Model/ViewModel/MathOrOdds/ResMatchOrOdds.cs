@@ -4,27 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Model.ViewModel
+namespace Data.Model.ViewModel.MathOrOdds
 {
-   public class ResFootMatchBase<T>
+  public  class ResMatchOrOdds
     {
-      public List<dayRaceVoList<T>> dayRaceVoList { get; set; }
-        
-    }
-
-    public class dayRaceVoList<T>
-    {
-        public string date { get; set; }
-
-        public string week { get; set; }
-
-        public List<raceVoList<T>> raceVoList { get; set; }
-    }
-    public class raceVoList<T>
-    {
-        //  public ResWinOrLose resWinOrLose { set; get; }
-
-
         public string id { get; set; }
 
         public string num { get; set; }
@@ -49,41 +32,22 @@ namespace Data.Model.ViewModel
 
         public string l_cn { get; set; }
         public string l_cn_abbr { get; set; }
-        public T bfOdds { get; set; } 
-        public Odds winorloseOdds { get; set; }
-        public TotalGoals totalOdds { get; set; }
-        public MatchScore scoreOdds { get; set; }
-        public HalfCourtNegative halfOdds { get; set; }
-
-    }
-
-    public class Odds
-    {
         public string a { get; set; }
-
         public string d { get; set; }
-
         public string h { get; set; }
-
         public string b { get; set; }
         public string e { get; set; }
         public string i { get; set; }
-    }
 
-    public class TotalGoals
-    {
-        public string s0 { get; set; }
-        public string s1 { get; set; }
-        public string s2 { get; set; }
-        public string s3 { get; set; }
-        public string s4 { get; set; }
-        public string s5 { get; set; }
-        public string s6 { get; set; }
-        public string s7 { get; set; }
-    }
+        public string ss0 { get; set; }
+        public string ss1 { get; set; }
+        public string ss2 { get; set; }
+        public string ss3 { get; set; }
+        public string ss4 { get; set; }
+        public string ss5 { get; set; }
+        public string ss6 { get; set; }
+        public string ss7 { get; set; }
 
-    public class MatchScore
-    {
         public string s1 { get; set; }
         public string s2 { get; set; }
         public string s3 { get; set; }
@@ -114,10 +78,6 @@ namespace Data.Model.ViewModel
         public string s28 { get; set; }
         public string s29 { get; set; }
         public string s30 { get; set; }
-    }
-
-    public class HalfCourtNegative
-    {
         public string aa { get; set; }
         public string ad { get; set; }
         public string ah { get; set; }
