@@ -738,6 +738,7 @@ namespace BLL
                         tt1.s28 = item.crs.s28;
                         tt1.s29 = item.crs.s29;
                         tt1.s30 = item.crs.s30;
+                        tt1.s31 = item.crs.s31;
                     }
                     else
                     {
@@ -773,8 +774,9 @@ namespace BLL
                             s27 = item.crs.s27,
                             s28 = item.crs.s28,
                             s29 = item.crs.s29,
-                            s30 = item.crs.s30
-                        });
+                            s30 = item.crs.s30,
+                            s31 = item.crs.s31
+                    });
                     }
                 }
 

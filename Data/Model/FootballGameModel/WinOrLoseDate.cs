@@ -138,7 +138,7 @@ namespace Data.FootballGameModel
     public class had
     {
         /// <summary>
-        /// 主队胜赔率
+        /// 主队负赔率
         /// </summary>
         public string a { get; set; }
         /// <summary>
@@ -146,7 +146,7 @@ namespace Data.FootballGameModel
         /// </summary>
         public string d { get; set; }
         /// <summary>
-        /// 主队负赔率
+        /// 主队胜赔率
         /// </summary>
         public string h { get; set; }
 

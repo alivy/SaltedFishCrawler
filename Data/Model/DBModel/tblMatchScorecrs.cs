@@ -43,5 +43,6 @@ namespace Data.Model.DBModel
         public string s29 { get; set; }
         public string s30 { get; set; }
 
+        public string s31 { get; set; }
     }
 }
