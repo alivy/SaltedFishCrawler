@@ -401,6 +401,12 @@ namespace BLL
         {
             var list = new ResFootMatchBase<string>();
             list.dayRaceVoList = new List<dayRaceVoList<string>>();
+            list.l_cnlist = new List<string>();
+            foreach (ResWinOrLose item in (_baseDal as FootballMatchDal).Getl_cnList())
+            {
+               
+                list.l_cnlist.Add(item.l_cn_abbr);
+            }
             foreach (ResMatchOrOdds item in (_baseDal as FootballMatchDal).GetAllMatchOrOdds())
             {
                 string strdate = "";
@@ -475,7 +481,7 @@ namespace BLL
                         race.scoreOdds .s28 = item.s28;
                         race.scoreOdds .s29 = item.s29;
                         race.scoreOdds.s30 = item.s30;
-
+                        race.scoreOdds.s31 = item.s31;
                         race.halfOdds .aa = item.aa;
                         race.halfOdds .ad = item.ad;
                         race.halfOdds .ah = item.ah;

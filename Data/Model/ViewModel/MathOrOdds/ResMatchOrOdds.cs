@@ -78,6 +78,7 @@ namespace Data.Model.ViewModel.MathOrOdds
         public string s28 { get; set; }
         public string s29 { get; set; }
         public string s30 { get; set; }
+        public string s31 { get; set; }
         public string aa { get; set; }
         public string ad { get; set; }
         public string ah { get; set; }

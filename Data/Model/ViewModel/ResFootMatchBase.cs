@@ -9,6 +9,8 @@ namespace Data.Model.ViewModel
    public class ResFootMatchBase<T>
     {
       public List<dayRaceVoList<T>> dayRaceVoList { get; set; }
+
+        public List<string> l_cnlist { get; set; }
         
     }
 
@@ -20,6 +22,7 @@ namespace Data.Model.ViewModel
 
         public List<raceVoList<T>> raceVoList { get; set; }
     }
+
     public class raceVoList<T>
     {
         //  public ResWinOrLose resWinOrLose { set; get; }
@@ -114,6 +117,7 @@ namespace Data.Model.ViewModel
         public string s28 { get; set; }
         public string s29 { get; set; }
         public string s30 { get; set; }
+        public string s31 { get; set; }
     }
 
     public class HalfCourtNegative

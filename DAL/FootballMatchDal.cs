@@ -3,6 +3,7 @@ using Data.Model.ViewModel;
 using Data.Model.ViewModel.MathOrOdds;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -192,6 +193,17 @@ namespace DAL
 	                                        LEFT JOIN tblMatchScorecrs d ON a.id = d.id
 	                                        LEFT JOIN tblHalfCourtNegativehafu e ON a.id = e.id");
                 var matchorodds = db.Database.SqlQuery<ResMatchOrOdds>(sql).ToList();
+                return matchorodds;
+            }
+        }
+
+        public List<ResWinOrLose> Getl_cnList()
+        {
+            using (var db = DBContext.CreateContext())
+            {
+                string sql = string.Format(@"SELECT l_cn_abbr
+                                        FROM tblFootballMatch group by l_cn_abbr");
+                var matchorodds = db.Database.SqlQuery<ResWinOrLose>(sql).ToList();
                 return matchorodds;
             }
         }
