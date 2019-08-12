@@ -561,7 +561,7 @@ namespace BLL
                 race.scoreOdds.s28 = item.s28;
                 race.scoreOdds.s29 = item.s29;
                 race.scoreOdds.s30 = item.s30;
-
+                race.scoreOdds.s31 = item.s31;
                 race.halfOdds.aa = item.aa;
                 race.halfOdds.ad = item.ad;
                 race.halfOdds.ah = item.ah;
