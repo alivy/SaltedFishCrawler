@@ -184,7 +184,7 @@ namespace DAL
 	                                        , d.s14, d.s15, d.s16, d.s17, d.s18
 	                                        , d.s19, d.s20, d.s21, d.s22, d.s23
 	                                        , d.s24, d.s25, d.s26, d.s27, d.s28
-	                                        , d.s29, d.s30,d.31, e.aa, e.ad, e.ah
+	                                        , d.s29, d.s30,d.s31, e.aa, e.ad, e.ah
 	                                        , e.da, e.dd, e.dh, e.ha, e.hd
 	                                        , e.hh
                                         FROM tblFootballMatch a
