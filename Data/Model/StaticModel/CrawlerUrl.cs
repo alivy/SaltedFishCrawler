@@ -12,7 +12,10 @@ namespace Data.StaticModel
     /// </summary>
     public class CrawlerUrl
     {
-        
+        /// <summary>
+        /// 双色球前20期地址
+        /// </summary>
+        public static string ssq = "http://f.apiplus.net/ssq-20.json";
 
         /// <summary>
         /// 竞彩足球地址
