@@ -38,6 +38,13 @@ namespace Data.Model.DBModel
 
         public virtual DbSet<tblHalfCourtNegativehafu> tblHalfCourtNegativehafu { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual DbSet<UserInfo> userInfo { get; set; }
+
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }

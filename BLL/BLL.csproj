@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="BaseBLL.cs" />
     <Compile Include="FootballMatchBLL.cs" />
+    <Compile Include="UserInfoBLL.cs" />
     <Compile Include="JieCaiTableBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -65,6 +66,10 @@
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{0FFCB27C-A0A2-4FF3-9E86-344A12305F06}</Project>
       <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{89443ED2-27FD-4460-8F4F-7033CF9FFF26}</Project>
+      <Name>Utils</Name>
     </ProjectReference>
     <ProjectReference Include="..\WorkFlow\WorkFlow.csproj">
       <Project>{24F876AF-86B1-400A-ABE9-074D5361AF88}</Project>
