@@ -38,7 +38,7 @@ namespace BLL
         {
             bool validate = false;
             userInfo.pwd = userInfo.pwd.GetMD5FromString();
-            var user = _baseDal.FirstOrDefault(x => (x.Phone.Equals(userInfo.account) || x.Eamil.Equals(userInfo.account)) && x.Password.Equals(userInfo.pwd));
+            var user = _baseDal.FirstOrDefault(x => x.Phone.Equals(userInfo.account) && x.Password.Equals(userInfo.pwd));
             int userId = 0;
             if (user != null)
             {
