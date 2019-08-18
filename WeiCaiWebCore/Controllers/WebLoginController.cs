@@ -36,11 +36,12 @@ namespace WeiCaiWebCore.Controllers
             }
             var chekUser = user.CheckLogin(userLogin);
             if (!chekUser.Item1)
-                return Json(ResMessage.CreatMessage(ResultMessageEnum.AuthorityCheck, "用户或密码错误")); 
+                return Json(ResMessage.CreatMessage(ResultMessageEnum.AuthorityCheck, "用户或密码错误"));
             int userId = chekUser.Item2;
             SessionManager.Add(ConstString.UserLoginId, userId);
             var token = userId.ToString().Encrypt();
-            return Json(ResMessage.CreatMessage(ResultMessageEnum.Success, "登录成功")); 
+            var obj =  new { token= token};
+            return Json(ResMessage.CreatMessage(ResultMessageEnum.Success, "登录成功", obj)); 
         }
         /// <summary>
         /// 用户注册
@@ -59,7 +60,9 @@ namespace WeiCaiWebCore.Controllers
                 return Json(ResMessage.CreatMessage(ResultMessageEnum.AuthorityCheck, "用户手机号或邮箱已注册"));
             int userId = check.Item2;
             SessionManager.Add(ConstString.UserLoginId, userId);
-            return Json(ResMessage.CreatMessage(ResultMessageEnum.Success, "注册成功"));
+            var token = userId.ToString().Encrypt();
+            var obj = new { token = token };
+            return Json(ResMessage.CreatMessage(ResultMessageEnum.Success, "注册成功", obj));
         }
 
     }

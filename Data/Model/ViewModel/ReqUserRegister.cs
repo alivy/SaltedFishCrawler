@@ -15,8 +15,8 @@ namespace Data.Model.ViewModel
         /// <summary>
         /// 用户名
         /// </summary>
-        [StringLength(50, ErrorMessage = "用户名长度设置过长")]
-        [Required(ErrorMessage = "用户名不能为空")]
+        //[StringLength(50, ErrorMessage = "用户名长度设置过长")]
+        //[Required(ErrorMessage = "用户名不能为空")]
         public string UserName { get; set; }
         /// <summary>
         /// 密码
@@ -37,7 +37,6 @@ namespace Data.Model.ViewModel
         /// <summary>
         /// 邮箱
         /// </summary>
-        [Required(ErrorMessage = "邮箱不能为空")]
         public string Email { get; set; }
 
     }
