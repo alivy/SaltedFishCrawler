@@ -1,4 +1,5 @@
 ﻿using Data.Model.DBModel;
+using EntityFramework.Extensions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -721,5 +722,119 @@ namespace DAL
             }
         }
         #endregion
+
+        #region 使用Z.EntityFramework.Extensions批量处理
+        /// <summary>
+        /// 批量更新
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public int BulkUpdate(List<T> entity)
+        {
+            using (var db = DBContext.CreateContext())
+            {
+                db.Set<T>().BulkUpdate(entity);
+                return db.SaveChanges();
+            }
+        }
+
+
+        /// <summary>
+        /// 批量更新,可协变
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public int BulkUpdate(IEnumerable<T> entity)
+        {
+            using (var db = DBContext.CreateContext())
+            {
+                db.Set<T>().BulkUpdate(entity);
+                return db.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// 批量插入
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public int BulkInsert(IEnumerable<T> entity)
+        {
+            using (var db = DBContext.CreateContext())
+            {
+                db.Set<T>().BulkInsert(entity);
+                return db.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// 批量删除
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public int BulkDelete(IEnumerable<T> entity)
+        {
+            using (var db = DBContext.CreateContext())
+            {
+                db.Set<T>().BulkDelete(entity);
+                return db.SaveChanges();
+            }
+        }
+        #endregion
+
+        #region 使用EntityFramework.Extended批量处理
+
+        /// <summary>
+        /// 批量删除
+        /// </summary>
+        /// <param name="where"></param>
+        /// <returns></returns>
+        public int BulkDelete(Expression<Func<T, bool>> where = null)
+        {
+            using (var db = DBContext.CreateContext())
+            {
+                if (where == null)
+                {
+                    db.Set<T>().Delete();
+                }
+                db.Set<T>().Where(where).Delete();
+
+                return db.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// 批量更新
+        /// </summary>
+        /// <param name="where"></param>
+        /// <returns></returns>
+        public int BulkUpdate(Expression<Func<T, T>> entity, Expression<Func<T, bool>> where = null)
+        {
+            using (var db = DBContext.CreateContext())
+            {
+                if (where == null)
+                {
+                    db.Set<T>().Update(entity);
+                }
+                db.Set<T>().Where(where).Update(entity);
+                return db.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// 批量添加
+        /// </summary>
+        /// <param name="where"></param>
+        /// <returns></returns>
+        public int BulkInsert2(IEnumerable<T> entity)
+        {
+            using (var db = DBContext.CreateContext())
+            {
+                db.Set<T>().AddRange(entity);
+                return db.SaveChanges();
+            }
+        }
+        #endregion
+
     }
 }

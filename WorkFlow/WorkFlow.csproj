@@ -55,6 +55,7 @@
     <Compile Include="FootballGameCrawler\MatchScoreSearch.cs" />
     <Compile Include="FootballGameCrawler\WinOrLoseSearch.cs" />
     <Compile Include="FootballGameCrawler\ISearch.cs" />
+    <Compile Include="OrderNum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SSQCrawler.cs" />
   </ItemGroup>
