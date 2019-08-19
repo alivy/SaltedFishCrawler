@@ -64,12 +64,12 @@ namespace BLL
                         race.weather_pic = item.weather_pic;
                         race.l_cn = item.l_cn;
                         race.l_cn_abbr = item.l_cn_abbr;
-                        race.bfOdds.a = item.a;
-                        race.bfOdds.d = item.d;
-                        race.bfOdds.h = item.h;
-                        race.bfOdds.b = item.b;
-                        race.bfOdds.e = item.e;
-                        race.bfOdds.i = item.i;
+                        //race.bfOdds.a = item.a;
+                        //race.bfOdds.d = item.d;
+                        //race.bfOdds.h = item.h;
+                        //race.bfOdds.b = item.b;
+                        //race.bfOdds.e = item.e;
+                        //race.bfOdds.i = item.i;
                         list.dayRaceVoList[i].raceVoList.Add(race);
                         strdate = "1";
 
@@ -94,12 +94,12 @@ namespace BLL
                 race.weather_pic = item.weather_pic;
                 race.l_cn = item.l_cn;
                 race.l_cn_abbr = item.l_cn_abbr;
-                race.bfOdds.a = item.a;
-                race.bfOdds.d = item.d;
-                race.bfOdds.h = item.h;
-                race.bfOdds.b = item.b;
-                race.bfOdds.e = item.e;
-                race.bfOdds.i = item.i;
+                //race.bfOdds.a = item.a;
+                //race.bfOdds.d = item.d;
+                //race.bfOdds.h = item.h;
+                //race.bfOdds.b = item.b;
+                //race.bfOdds.e = item.e;
+                //race.bfOdds.i = item.i;
                 day.raceVoList.Add(race);
 
                 list.dayRaceVoList.Add(day);
@@ -413,7 +413,9 @@ namespace BLL
                 var day = new dayRaceVoList<string>();
                 day.raceVoList = new List<raceVoList<string>>();
                 var race = new raceVoList<string>();
-                race.winorloseOdds = new Odds();
+               // race.winorloseOdds = new Odds();
+                race.hadodds = new hadodds();
+                race.hhadodds = new hhadodds();
                 race.totalOdds = new TotalGoals();
                 race.scoreOdds = new MatchScore();
                 race.halfOdds = new HalfCourtNegative();
@@ -435,18 +437,18 @@ namespace BLL
                         race.l_cn = item.l_cn;
                         race.l_cn_abbr = item.l_cn_abbr;
 
-                        race.winorloseOdds.a = item.a;
-                        race.winorloseOdds.d = item.d;
-                        race.winorloseOdds.h = item.h;
-                        race.winorloseOdds.b = item.b;
-                        race.winorloseOdds.e = item.e;
-                        race.winorloseOdds.i = item.i;
-                        race.winorloseOdds.o_type = item.o_type;
-                        race.winorloseOdds.single = item.single;
-                        race.winorloseOdds.fixedodds = item.fixedodds;
-                        race.winorloseOdds.ro_type = item.ro_type;
-                        race.winorloseOdds.rsingle = item.rsingle;
-                        race.winorloseOdds.rfixedodds = item.rfixedodds;
+                        race.hadodds.a = item.a;
+                        race.hadodds.d = item.d;
+                        race.hadodds.h = item.h;
+                        race.hhadodds.a = item.b;
+                        race.hhadodds.d = item.e;
+                        race.hhadodds.h = item.i;
+                        race.hadodds.o_type = item.o_type;
+                        race.hadodds.single = item.single;
+                        race.hadodds.fixedodds = item.fixedodds;
+                        race.hhadodds.o_type = item.ro_type;
+                        race.hhadodds.single = item.rsingle;
+                        race.hhadodds.fixedodds = item.rfixedodds;
 
                         race.totalOdds.s0 = item.ss0;
                          race.totalOdds.s1 = item.ss1;
@@ -456,6 +458,9 @@ namespace BLL
                          race.totalOdds.s5 = item.ss5;
                          race.totalOdds.s6 = item.ss6;
                          race.totalOdds.s7 = item.ss7;
+                         race.totalOdds.o_type = item.co_type;
+                         race.totalOdds.single = item.csingle;
+                         race.totalOdds.fixedodds = item.cfixedodds;
 
                         race.scoreOdds .s1 = item.s1;
                         race.scoreOdds .s2 = item.s2;
@@ -488,6 +493,9 @@ namespace BLL
                         race.scoreOdds .s29 = item.s29;
                         race.scoreOdds.s30 = item.s30;
                         race.scoreOdds.s31 = item.s31;
+                        race.scoreOdds.o_type = item.do_type;
+                        race.scoreOdds.single = item.dsingle;
+                        race.scoreOdds.fixedodds = item.dfixedodds;
                         race.halfOdds .aa = item.aa;
                         race.halfOdds .ad = item.ad;
                         race.halfOdds .ah = item.ah;
@@ -497,6 +505,9 @@ namespace BLL
                         race.halfOdds .ha = item.ha;
                         race.halfOdds .hd = item.hd;
                         race.halfOdds.hh = item.hh;
+                        race.halfOdds.o_type = item.eo_type;
+                        race.halfOdds.single = item.esingle;
+                        race.halfOdds.fixedodds = item.efixedodds;
                         list.dayRaceVoList[i].raceVoList.Add(race);
                         strdate = "1";
 
@@ -521,18 +532,30 @@ namespace BLL
                 race.weather_pic = item.weather_pic;
                 race.l_cn = item.l_cn;
                 race.l_cn_abbr = item.l_cn_abbr;
-                race.winorloseOdds.a = item.a;
-                race.winorloseOdds.d = item.d;
-                race.winorloseOdds.h = item.h;
-                race.winorloseOdds.b = item.b;
-                race.winorloseOdds.e = item.e;
-                race.winorloseOdds.i = item.i;
-                race.winorloseOdds.o_type = item.o_type;
-                race.winorloseOdds.single = item.single;
-                race.winorloseOdds.fixedodds = item.fixedodds;
-                race.winorloseOdds.ro_type = item.ro_type;
-                race.winorloseOdds.rsingle = item.rsingle;
-                race.winorloseOdds.rfixedodds = item.rfixedodds;
+                //race.winorloseOdds.a = item.a;
+                //race.winorloseOdds.d = item.d;
+                //race.winorloseOdds.h = item.h;
+                //race.winorloseOdds.b = item.b;
+                //race.winorloseOdds.e = item.e;
+                //race.winorloseOdds.i = item.i;
+                //race.winorloseOdds.o_type = item.o_type;
+                //race.winorloseOdds.single = item.single;
+                //race.winorloseOdds.fixedodds = item.fixedodds;
+                //race.winorloseOdds.ro_type = item.ro_type;
+                //race.winorloseOdds.rsingle = item.rsingle;
+                //race.winorloseOdds.rfixedodds = item.rfixedodds;
+                race.hadodds.a = item.a;
+                race.hadodds.d = item.d;
+                race.hadodds.h = item.h;
+                race.hhadodds.a = item.b;
+                race.hhadodds.d = item.e;
+                race.hhadodds.h = item.i;
+                race.hadodds.o_type = item.o_type;
+                race.hadodds.single = item.single;
+                race.hadodds.fixedodds = item.fixedodds;
+                race.hhadodds.o_type = item.ro_type;
+                race.hhadodds.single = item.rsingle;
+                race.hhadodds.fixedodds = item.rfixedodds;
                 race.totalOdds.s0 = item.ss0;
                 race.totalOdds.s1 = item.ss1;
                 race.totalOdds.s2 = item.ss2;
@@ -541,7 +564,9 @@ namespace BLL
                 race.totalOdds.s5 = item.ss5;
                 race.totalOdds.s6 = item.ss6;
                 race.totalOdds.s7 = item.ss7;
-
+                race.totalOdds.o_type = item.co_type;
+                race.totalOdds.single = item.csingle;
+                race.totalOdds.fixedodds = item.cfixedodds;
                 race.scoreOdds.s1 = item.s1;
                 race.scoreOdds.s2 = item.s2;
                 race.scoreOdds.s3 = item.s3;
@@ -573,6 +598,9 @@ namespace BLL
                 race.scoreOdds.s29 = item.s29;
                 race.scoreOdds.s30 = item.s30;
                 race.scoreOdds.s31 = item.s31;
+                race.scoreOdds.o_type = item.do_type;
+                race.scoreOdds.single = item.dsingle;
+                race.scoreOdds.fixedodds = item.dfixedodds;
                 race.halfOdds.aa = item.aa;
                 race.halfOdds.ad = item.ad;
                 race.halfOdds.ah = item.ah;
@@ -582,6 +610,9 @@ namespace BLL
                 race.halfOdds.ha = item.ha;
                 race.halfOdds.hd = item.hd;
                 race.halfOdds.hh = item.hh;
+                race.halfOdds.o_type = item.do_type;
+                race.halfOdds.single = item.dsingle;
+                race.halfOdds.fixedodds = item.dfixedodds;
                 day.raceVoList.Add(race);
 
                 list.dayRaceVoList.Add(day);
@@ -701,6 +732,9 @@ namespace BLL
                         tt1.s5 = item.ttg.s5;
                         tt1.s6 = item.ttg.s6;
                         tt1.s7 = item.ttg.s7;
+                        tt1.o_type = item.ttg.o_type;
+                        tt1.single = item.ttg.single;
+                        tt1.fixedodds = item.ttg.fixedodds;
 
                         new BaseBLL<tblTotalGoalsttg>().UpdateEntity(tt1);
                     }
@@ -716,8 +750,11 @@ namespace BLL
                             s4 = item.ttg.s4,
                             s5 = item.ttg.s5,
                             s6 = item.ttg.s6,
-                            s7 = item.ttg.s7
-                        });
+                            s7 = item.ttg.s7,
+                            o_type = item.ttg.o_type,
+                            single = item.ttg.single,
+                            fixedodds = item.ttg.fixedodds
+                    });
                     }
                 }
             }
@@ -768,6 +805,9 @@ namespace BLL
                         tt1.s29 = item.crs.s29;
                         tt1.s30 = item.crs.s30;
                         tt1.s31 = item.crs.s31;
+                        tt1.o_type = item.crs.o_type;
+                        tt1.single = item.crs.single;
+                        tt1.fixedodds = item.crs.fixedodds;
                     }
                     else
                     {
@@ -804,8 +844,11 @@ namespace BLL
                             s28 = item.crs.s28,
                             s29 = item.crs.s29,
                             s30 = item.crs.s30,
-                            s31 = item.crs.s31
-                    });
+                            s31 = item.crs.s31,
+                            o_type = item.crs.o_type,
+                            single = item.crs.single,
+                            fixedodds = item.crs.fixedodds
+                        });
                     }
                 }
 
@@ -835,6 +878,9 @@ namespace BLL
                         tt1.ha = item.hafu.ha;
                         tt1.hd = item.hafu.hd;
                         tt1.hh = item.hafu.hh;
+                        tt1.o_type = item.hafu.o_type;
+                        tt1.single = item.hafu.single;
+                        tt1.fixedodds = item.hafu.fixedodds;
                     }
                     else
                     {
@@ -849,7 +895,10 @@ namespace BLL
                             dh = item.hafu.dh,
                             ha = item.hafu.ha,
                             hd = item.hafu.hd,
-                            hh = item.hafu.hh
+                            hh = item.hafu.hh,
+                            o_type = item.hafu.o_type,
+                            single = item.hafu.single,
+                            fixedodds = item.hafu.fixedodds
                         });
                     }
                 }

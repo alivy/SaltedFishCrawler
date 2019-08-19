@@ -44,5 +44,9 @@ namespace Data.Model.DBModel
         public string s30 { get; set; }
 
         public string s31 { get; set; }
+
+        public string o_type { get; set; }
+        public string single { get; set; }
+        public string fixedodds { get; set; }
     }
 }

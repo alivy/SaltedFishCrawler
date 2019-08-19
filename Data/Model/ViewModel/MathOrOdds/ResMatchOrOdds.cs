@@ -94,5 +94,17 @@ namespace Data.Model.ViewModel.MathOrOdds
         public string ha { get; set; }
         public string hd { get; set; }
         public string hh { get; set; }
+
+        public string co_type { get; set; }
+        public string csingle { get; set; }
+        public string cfixedodds { get; set; }
+
+        public string do_type { get; set; }
+        public string dsingle { get; set; }
+        public string dfixedodds { get; set; }
+
+        public string eo_type { get; set; }
+        public string esingle { get; set; }
+        public string efixedodds { get; set; }
     }
 }
