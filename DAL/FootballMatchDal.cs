@@ -186,7 +186,7 @@ namespace DAL
 	                                        , d.s24, d.s25, d.s26, d.s27, d.s28
 	                                        , d.s29, d.s30,d.s31, e.aa, e.ad, e.ah
 	                                        , e.da, e.dd, e.dh, e.ha, e.hd
-	                                        , e.hh
+	                                        , e.hh,b.o_type,b.single,b.fixedodds,b.ro_type, b.rsingle,b.rfixedodds
                                         FROM tblFootballMatch a
 	                                        LEFT JOIN tblWinOrLosehad b ON a.id = b.id
 	                                        LEFT JOIN tblTotalGoalsttg c ON a.id = c.id

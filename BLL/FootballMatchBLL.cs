@@ -441,8 +441,14 @@ namespace BLL
                         race.winorloseOdds.b = item.b;
                         race.winorloseOdds.e = item.e;
                         race.winorloseOdds.i = item.i;
+                        race.winorloseOdds.o_type = item.o_type;
+                        race.winorloseOdds.single = item.single;
+                        race.winorloseOdds.fixedodds = item.fixedodds;
+                        race.winorloseOdds.ro_type = item.ro_type;
+                        race.winorloseOdds.rsingle = item.rsingle;
+                        race.winorloseOdds.rfixedodds = item.rfixedodds;
 
-                         race.totalOdds.s0 = item.ss0;
+                        race.totalOdds.s0 = item.ss0;
                          race.totalOdds.s1 = item.ss1;
                          race.totalOdds.s2 = item.ss2;
                          race.totalOdds.s3 = item.ss3;
@@ -521,7 +527,12 @@ namespace BLL
                 race.winorloseOdds.b = item.b;
                 race.winorloseOdds.e = item.e;
                 race.winorloseOdds.i = item.i;
-
+                race.winorloseOdds.o_type = item.o_type;
+                race.winorloseOdds.single = item.single;
+                race.winorloseOdds.fixedodds = item.fixedodds;
+                race.winorloseOdds.ro_type = item.ro_type;
+                race.winorloseOdds.rsingle = item.rsingle;
+                race.winorloseOdds.rfixedodds = item.rfixedodds;
                 race.totalOdds.s0 = item.ss0;
                 race.totalOdds.s1 = item.ss1;
                 race.totalOdds.s2 = item.ss2;
@@ -632,9 +643,15 @@ namespace BLL
                         tt1.a = item.had.a;
                         tt1.d = item.had.d;
                         tt1.h = item.had.h;
+                        tt1.o_type = item.had.o_type;
+                        tt1.single = item.had.single;
+                        tt1.fixedodds = item.had.fixedodds;
                         tt1.b = item.hhad.a;
                         tt1.e = item.hhad.d;
                         tt1.i = item.hhad.h;
+                        tt1.ro_type = item.hhad.o_type;
+                        tt1.rsingle = item.hhad.single;
+                        tt1.rfixedodds = item.hhad.fixedodds;
                         new BaseBLL<tblWinOrLosehad>().UpdateEntity(tt1);
                     }
                     else
@@ -647,8 +664,14 @@ namespace BLL
                             h = item.had.h,
                             b = item.hhad.a,
                             e = item.hhad.d,
-                            i = item.hhad.h
-                        });
+                            i = item.hhad.h,
+                            o_type = item.had.o_type,
+                            single = item.had.single,
+                            fixedodds = item.had.fixedodds,
+                            ro_type = item.hhad.o_type,
+                            rsingle = item.hhad.single,
+                            rfixedodds = item.hhad.fixedodds
+                    });
                     }
                 }
 

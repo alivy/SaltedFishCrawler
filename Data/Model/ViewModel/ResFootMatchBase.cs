@@ -71,6 +71,12 @@ namespace Data.Model.ViewModel
         public string b { get; set; }
         public string e { get; set; }
         public string i { get; set; }
+        public string o_type { get; set; }
+        public string single { get; set; }
+        public string fixedodds { get; set; }
+        public string ro_type { get; set; }
+        public string rsingle { get; set; }
+        public string rfixedodds { get; set; }
     }
 
     public class TotalGoals
