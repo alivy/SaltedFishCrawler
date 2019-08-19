@@ -20,5 +20,11 @@ namespace FishTest
             var tt = new JieCaiTableBLL().QueryTset();
 
         }
+
+        public void t1()
+        {
+            var pulse = new PulseBLL();
+            pulse.初始化业务订单号();
+        }
     }
 }
