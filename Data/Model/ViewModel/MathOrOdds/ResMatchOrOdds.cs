@@ -38,6 +38,12 @@ namespace Data.Model.ViewModel.MathOrOdds
         public string b { get; set; }
         public string e { get; set; }
         public string i { get; set; }
+        public string o_type { get; set; }
+        public string single { get; set; }
+        public string fixedodds { get; set; }
+        public string ro_type { get; set; }
+        public string rsingle { get; set; }
+        public string rfixedodds { get; set; }
 
         public string ss0 { get; set; }
         public string ss1 { get; set; }
@@ -88,5 +94,17 @@ namespace Data.Model.ViewModel.MathOrOdds
         public string ha { get; set; }
         public string hd { get; set; }
         public string hh { get; set; }
+
+        public string co_type { get; set; }
+        public string csingle { get; set; }
+        public string cfixedodds { get; set; }
+
+        public string do_type { get; set; }
+        public string dsingle { get; set; }
+        public string dfixedodds { get; set; }
+
+        public string eo_type { get; set; }
+        public string esingle { get; set; }
+        public string efixedodds { get; set; }
     }
 }

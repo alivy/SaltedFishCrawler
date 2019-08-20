@@ -22,6 +22,9 @@ namespace Data.Model.DBModel
         public string s5 { get; set; }
         public string s6 { get; set; }
         public string s7 { get; set; }
+        public string o_type { get; set; }
+        public string single { get; set; }
+        public string fixedodds { get; set; }
 
     }
 }

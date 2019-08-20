@@ -20,6 +20,8 @@ namespace Data.Model.DBModel
         public string ha { get; set; }
         public string hd { get; set; }
         public string hh { get; set; }
-
+        public string o_type { get; set; }
+        public string single { get; set; }
+        public string fixedodds { get; set; }
     }
 }

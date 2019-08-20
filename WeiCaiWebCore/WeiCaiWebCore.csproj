@@ -156,7 +156,10 @@
     <Compile Include="Controllers\FootballMatchController.cs" />
     <Compile Include="Controllers\BaseAction\RequestActionResult.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Filter\CustomAttribute\AllowAdoptAttribute.cs" />
+	 <Compile Include="Controllers\WebLoginAction\RegisterAction.cs" />
+    <Compile Include="Controllers\WebLoginAction\LoginInAction.cs" />
+    <Compile Include="Controllers\WebLoginController.cs" />
+	 <Compile Include="Filter\CustomAttribute\AllowAdoptAttribute.cs" />
     <Compile Include="Filter\CustomAttribute\CompressActionFilterAttribute.cs" />
     <Compile Include="Filter\CustomAttribute\CustomActionFilterAttribute.cs" />
     <Compile Include="Filter\CustomHandleError.cs" />
@@ -217,6 +220,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\WebLogin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

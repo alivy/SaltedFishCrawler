@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Data.Model.ViewModel
 {
-   public class ResFootMatchBase<T>
+    public class ResFootMatchBase<T>
     {
-      public List<dayRaceVoList<T>> dayRaceVoList { get; set; }
+        public List<dayRaceVoList<T>> dayRaceVoList { get; set; }
 
         public List<string> l_cnlist { get; set; }
-        
+
     }
 
     public class dayRaceVoList<T>
@@ -52,8 +52,11 @@ namespace Data.Model.ViewModel
 
         public string l_cn { get; set; }
         public string l_cn_abbr { get; set; }
-        public T bfOdds { get; set; } 
-        public Odds winorloseOdds { get; set; }
+        public T bfOdds { get; set; }
+      //  public Odds winorloseOdds { get; set; }
+
+        public hadodds hadodds { get; set; }
+        public hhadodds hhadodds { get; set; }
         public TotalGoals totalOdds { get; set; }
         public MatchScore scoreOdds { get; set; }
         public HalfCourtNegative halfOdds { get; set; }
@@ -62,17 +65,49 @@ namespace Data.Model.ViewModel
 
     public class Odds
     {
+        //public string a { get; set; }
+
+        //public string d { get; set; }
+
+        //public string h { get; set; }
+
+        //public string b { get; set; }
+        //public string e { get; set; }
+        //public string i { get; set; }
+        //public string o_type { get; set; }
+        //public string single { get; set; }
+        //public string fixedodds { get; set; }
+        //public string ro_type { get; set; }
+        //public string rsingle { get; set; }
+        //public string rfixedodds { get; set; }
+
+        //public hadodds hadodds { get; set; }
+
+        //public hhadodds hhadodds { get; set; }
+    }
+    public class hadodds
+    {
         public string a { get; set; }
 
         public string d { get; set; }
 
         public string h { get; set; }
-
-        public string b { get; set; }
-        public string e { get; set; }
-        public string i { get; set; }
+        public string o_type { get; set; }
+        public string single { get; set; }
+        public string fixedodds { get; set; }
     }
 
+    public class hhadodds
+    {
+        public string a { get; set; }
+
+        public string d { get; set; }
+
+        public string h { get; set; }
+        public string o_type { get; set; }
+        public string single { get; set; }
+        public string fixedodds { get; set; }
+    }
     public class TotalGoals
     {
         public string s0 { get; set; }
@@ -83,6 +118,9 @@ namespace Data.Model.ViewModel
         public string s5 { get; set; }
         public string s6 { get; set; }
         public string s7 { get; set; }
+        public string o_type { get; set; }
+        public string single { get; set; }
+        public string fixedodds { get; set; }
     }
 
     public class MatchScore
@@ -118,6 +156,9 @@ namespace Data.Model.ViewModel
         public string s29 { get; set; }
         public string s30 { get; set; }
         public string s31 { get; set; }
+        public string o_type { get; set; }
+        public string single { get; set; }
+        public string fixedodds { get; set; }
     }
 
     public class HalfCourtNegative
@@ -131,5 +172,9 @@ namespace Data.Model.ViewModel
         public string ha { get; set; }
         public string hd { get; set; }
         public string hh { get; set; }
+
+        public string o_type { get; set; }
+        public string single { get; set; }
+        public string fixedodds { get; set; }
     }
 }

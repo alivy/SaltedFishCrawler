@@ -34,6 +34,9 @@
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
@@ -46,10 +49,15 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Z.EntityFramework.Extensions, Version=3.22.0.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Z.EntityFramework.Extensions.3.22.0\lib\net45\Z.EntityFramework.Extensions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseBLL.cs" />
     <Compile Include="FootballMatchBLL.cs" />
+    <Compile Include="PulseBLL.cs" />
+    <Compile Include="UserInfoBLL.cs" />
     <Compile Include="JieCaiTableBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,8 +74,12 @@
       <Project>{0FFCB27C-A0A2-4FF3-9E86-344A12305F06}</Project>
       <Name>Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{89443ED2-27FD-4460-8F4F-7033CF9FFF26}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WorkFlow\WorkFlow.csproj">
-      <Project>{24F876AF-86B1-400A-ABE9-074D5361AF88}</Project>
+      <Project>{24f876af-86b1-400a-abe9-074d5361af88}</Project>
       <Name>WorkFlow</Name>
     </ProjectReference>
   </ItemGroup>

@@ -57,9 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\LoginEnum.cs" />
     <Compile Include="Enums\ResultMessageEnum.cs" />
     <Compile Include="Enums\FootballGameEnum\FootballGameTypeEnum.cs" />
     <Compile Include="Enums\LotteryTypeEnum.cs" />
+    <Compile Include="Model\DBModel\Q_Pulse.cs" />
+    <Compile Include="Model\DBModel\UserInfo.cs" />
     <Compile Include="Model\SSQModel\CrawlSSQInfo.cs" />
     <Compile Include="Model\ViewModel\MathOrOdds\ResMatchOrOdds.cs" />
     <Compile Include="Model\ViewModel\RequestResult.cs" />
@@ -78,6 +81,8 @@
     <Compile Include="Model\FootballGameModel\TotalGoalsDate.cs" />
     <Compile Include="Model\FootballGameModel\WinOrLoseDate.cs" />
     <Compile Include="Model\ViewModel\ReqFootballMatch.cs" />
+    <Compile Include="Model\ViewModel\ReqUserRegister.cs" />
+    <Compile Include="Model\ViewModel\ReqUserLogin.cs" />
     <Compile Include="Model\ViewModel\ResFootMatchBase.cs" />
     <Compile Include="Model\ViewModel\ResHalfCourtNegative.cs" />
     <Compile Include="Model\ViewModel\ResMatchScore.cs" />

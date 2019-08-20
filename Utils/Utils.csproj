@@ -86,7 +86,6 @@
     <Compile Include="Help\RegExpStr.cs" />
     <Compile Include="Help\RSAFromPkcs8.cs" />
     <Compile Include="Help\RSAHelper.cs" />
-    <Compile Include="Help\SessionManager.cs" />
     <Compile Include="Help\SignHelper.cs" />
     <Compile Include="Help\StringHelper.cs" />
     <Compile Include="Help\ValidateHelper.cs" />
