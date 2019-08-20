@@ -156,6 +156,14 @@
     <Compile Include="Controllers\FootballMatchController.cs" />
     <Compile Include="Controllers\BaseAction\RequestActionResult.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Filter\CustomAttribute\AllowAdoptAttribute.cs" />
+    <Compile Include="Filter\CustomAttribute\CompressActionFilterAttribute.cs" />
+    <Compile Include="Filter\CustomAttribute\CustomActionFilterAttribute.cs" />
+    <Compile Include="Filter\CustomHandleError.cs" />
+    <Compile Include="Filter\CustomAttribute\ExceptionHandleAttribute.cs" />
+    <Compile Include="Filter\CustomAttribute\HttpsToHttpAttribute.cs" />
+    <Compile Include="Filter\CustomAttribute\TokenAuthorizeAttribute.cs" />
+    <Compile Include="Filter\CustomAttribute\UserAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -75,6 +75,7 @@
     <Compile Include="Help\Http\Other.cs" />
     <Compile Include="Help\Http\Path.cs" />
     <Compile Include="Help\Http\Server.cs" />
+    <Compile Include="Help\IOHelper.cs" />
     <Compile Include="Help\JsonHelper.cs" />
     <Compile Include="Help\Log.cs" />
     <Compile Include="Help\Logger.cs" />
