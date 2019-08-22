@@ -160,13 +160,6 @@
     <Compile Include="Controllers\WebLoginAction\RegisterAction.cs" />
     <Compile Include="Controllers\WebLoginAction\LoginInAction.cs" />
     <Compile Include="Controllers\WebLoginController.cs" />
-    <Compile Include="Filter\CustomAttribute\CompressActionFilterAttribute.cs" />
-    <Compile Include="Filter\CustomAttribute\CustomActionFilterAttribute.cs" />
-    <Compile Include="Filter\CustomAttribute\ExceptionHandleAttribute.cs" />
-    <Compile Include="Filter\CustomAttribute\HttpsToHttpAttribute.cs" />
-    <Compile Include="Filter\CustomAttribute\NoTokenCheckAttribute.cs" />
-    <Compile Include="Filter\CustomAttribute\TokenAuthorizeAttribute.cs" />
-    <Compile Include="Filter\CustomHandleError.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
