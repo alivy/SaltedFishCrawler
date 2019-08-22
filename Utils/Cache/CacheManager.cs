@@ -73,7 +73,7 @@ namespace Utils.Cache
         }
 
         /// <summary>
-        /// 添加缓存数据。
+        /// 添加/更新缓存数据。
         /// 如果另一个相同键值的数据已经存在，原数据项将被删除，新数据项被添加。
         /// </summary>
         /// <param name="key">缓存数据的键值</param>

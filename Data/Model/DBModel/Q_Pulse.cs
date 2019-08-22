@@ -13,17 +13,32 @@ namespace Data.Model.DBModel
     {
         public int id { get; set; }
 
+        /// <summary>
+        /// 名称
+        /// </summary>
         [Required]
         [StringLength(10)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// 数据
+        /// </summary>
         public int Num { get; set; }
 
+        /// <summary>
+        /// 添加时间
+        /// </summary>
         public DateTime AddTime { get; set; }
 
+        /// <summary>
+        /// 描述
+        /// </summary>
         [StringLength(100)]
         public string desc { get; set; }
 
+        /// <summary>
+        /// 重置
+        /// </summary>
         public int IsReset { get; set; }
 
         public DateTime UpdateTime { get; set; }
