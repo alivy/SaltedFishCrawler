@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDal.cs" />
+    <Compile Include="CapitalDAL.cs" />
     <Compile Include="FootballMatchDal.cs" />
     <Compile Include="PulseDAL.cs" />
     <Compile Include="UserInfoDAL.cs" />

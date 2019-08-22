@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseBLL.cs" />
+    <Compile Include="CapitalBLL.cs" />
     <Compile Include="FootballMatchBLL.cs" />
     <Compile Include="PulseBLL.cs" />
     <Compile Include="UserInfoBLL.cs" />
