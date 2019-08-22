@@ -42,10 +42,32 @@ namespace BLL
             int userId = 0;
             if (user != null)
             {
+                CacheManager.Add(UserInfo.GetKey(userId), user);
                 userId = user.Id;
                 validate = true;
             }
             return (validate, userId);
+        }
+
+        /// <summary>
+        /// 根据id查询用户信息
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        
+        public UserInfo QueryUserInfoById(int userId)
+        {
+            string userkey = UserInfo.GetKey(userId);
+            var user = CacheManager.GetData<UserInfo>(userkey);
+            if (user == null)
+            {
+                var userDb = _baseDal.FirstOrDefault(x => x.Id.Equals(userId));
+                if (userDb == null)
+                    return null;
+                CacheManager.Add(userkey, userDb);
+                return userDb;
+            }
+            return user;
         }
 
 

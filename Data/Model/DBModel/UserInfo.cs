@@ -12,6 +12,32 @@ namespace Data.Model.DBModel
     [Table("UserInfo")]
     public partial class UserInfo
     {
+        private const string _key = "User_{0}";
+
+        /// <summary>
+        ///  KeyFormat 格式
+        /// </summary>
+        public string KeyFormat
+        {
+            get { return _key; }
+        }
+        /// <summary>
+        ///  在Couchbase中的Key值
+        /// </summary>
+        public string Key
+        {
+            get { return string.Format(KeyFormat, Id); }
+        }
+
+        /// <summary>
+        ///  获得CouchBase的Key
+        /// </summary>
+        /// <returns></returns>
+        public static string GetKey(int userId)
+        {
+            return string.Format(_key, userId);
+        }
+
         /// <summary>
         /// 主键用户id
         /// </summary>

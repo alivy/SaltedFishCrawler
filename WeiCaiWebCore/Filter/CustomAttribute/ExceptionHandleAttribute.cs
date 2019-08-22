@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using Utils.Help;
 
-namespace WebSite.Controllers.Filter
+namespace WeiCaiWebCore.Filter
 {
     /// <summary>
     /// 错误重定向页面

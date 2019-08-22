@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using System.Xml.Linq;
 using Utils.Help;
 
-namespace WebSite.Controllers.Filter
+namespace WeiCaiWebCore.Filter
 {
     public class HttpsToHttpAttribute : ActionFilterAttribute
     {

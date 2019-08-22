@@ -57,14 +57,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\FootballGameEnum\WinOrLoseEnum.cs" />
     <Compile Include="Enums\LoginEnum.cs" />
     <Compile Include="Enums\ResultMessageEnum.cs" />
     <Compile Include="Enums\FootballGameEnum\FootballGameTypeEnum.cs" />
     <Compile Include="Enums\LotteryTypeEnum.cs" />
     <Compile Include="Model\DBModel\Q_Pulse.cs" />
     <Compile Include="Model\DBModel\UserInfo.cs" />
+    <Compile Include="Model\DBModel\UserOrder.cs" />
     <Compile Include="Model\SSQModel\CrawlSSQInfo.cs" />
     <Compile Include="Model\ViewModel\MathOrOdds\ResMatchOrOdds.cs" />
+    <Compile Include="Model\ViewModel\ReqBuyFullLottery.cs" />
     <Compile Include="Model\ViewModel\RequestResult.cs" />
     <Compile Include="Model\DBModel\DBContext.cs" />
     <Compile Include="Model\DBModel\JieCaiTable.cs" />

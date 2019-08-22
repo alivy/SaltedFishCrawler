@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Utils.Cache;
 using Utils.Encrypt;
 using Utils.Help;
 
@@ -37,8 +38,9 @@ namespace WeiCaiWebCore.Controllers.WebLoginAction
                     Phone = userRegister.Phone,
                     CreateData = DateTime.Now
                 });
-
                 var user = userBase.FirstOrDefault(c => c.Phone.Equals(userRegister.Phone) && c.Password.Equals(userRegister.PassWord));
+                if (user != null)
+                    CacheManager.Add(UserInfo.GetKey(user.Id), user);
                 return (true, user.Id);
             }
             catch (Exception ex)

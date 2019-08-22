@@ -7,6 +7,9 @@ using System.Web.Mvc;
 
 namespace WebSite.Filter
 {
+    /// <summary>
+    /// 输出压缩数据
+    /// </summary>
     public class CompressActionFilterAttribute : ActionFilterAttribute
     {
         /// <summary>

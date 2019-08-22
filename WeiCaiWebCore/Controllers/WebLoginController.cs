@@ -10,23 +10,23 @@ using System.Web.Mvc;
 using Utils.Cache;
 using Utils.Encrypt;
 using Utils.Expand;
+using WeiCaiWebCore.Filter;
+using WebSite.Filter;
 using WeiCaiWebCore.Controllers.WebLoginAction;
 
 namespace WeiCaiWebCore.Controllers
 {
+    [TokenAuthorize]
     public class WebLoginController : Controller
     {
         private static UserInfoBLL user = new UserInfoBLL();
-
-
-
-
         // GET: WebLogin
         /// <summary>
         /// 用户登录
         /// </summary>
         /// <param name="userLogin"></param>
         /// <returns></returns>
+        [NoTokenCheck]
         public ActionResult LoginIn(ReqUserLogin userLogin)
         {
             if (!ModelState.IsValid)
@@ -40,14 +40,16 @@ namespace WeiCaiWebCore.Controllers
             int userId = chekUser.Item2;
             SessionManager.Add(ConstString.UserLoginId, userId);
             var token = userId.ToString().Encrypt();
-            var obj =  new { token= token};
-            return Json(ResMessage.CreatMessage(ResultMessageEnum.Success, "登录成功", obj)); 
+            var obj = new { token = token };
+            return Json(ResMessage.CreatMessage(ResultMessageEnum.Success, "登录成功", obj));
         }
+
         /// <summary>
         /// 用户注册
         /// </summary>
         /// <param name="userLogin"></param>
         /// <returns></returns>
+        [NoTokenCheck]
         public ActionResult Register(ReqUserRegister userRegister)
         {
             if (!ModelState.IsValid)

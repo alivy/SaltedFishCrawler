@@ -8,10 +8,15 @@ using WebSite.Filter;
 using Utils.Encrypt;
 using Utils.Cache;
 using Data.ViewModel;
+using Data.Enums;
+using Data.Model.DBModel;
+using BLL;
 
-namespace WebSite.Controllers.Filter
+namespace WeiCaiWebCore.Filter
 {
-
+    /// <summary>
+    /// 验证用户Token
+    /// </summary>
     [CompressActionFilter]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class TokenAuthorizeAttribute : AuthorizeAttribute
@@ -20,36 +25,38 @@ namespace WebSite.Controllers.Filter
         /// 权限验证
         /// </summary>
         /// <param name="filterContext"></param>
-        //public override void OnAuthorization(AuthorizationContext filterContext)
-        //{
-        //    //过滤验证
-        //    if (filterContext.ActionDescriptor.IsDefined(typeof(AllowAnonymousAttribute), true) ||
-        //       filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(typeof(AllowAnonymousAttribute), true))
-        //        return;
-        //    var token = filterContext.HttpContext.Request.Headers["token"];
-        //    if (!string.IsNullOrWhiteSpace(token))
-        //    {
-        //        string userId = token.Decrypt();
-        //        if (CheckToken(userId))
-        //        {
-        //            SessionManager.Add(ConstString.SysUserLoginId, userId);
-        //            return;
-        //        } 
-        //    }
-        //    filterContext.HttpContext.Response.ContentType = "application/json";
-        //    var result = ResMessage.CreatMessage(ResultTypeEnum.Error, "无Token用户权限,请登录获取token");
-        //    string json = JsonConvert.SerializeObject(result);
-        //    filterContext.HttpContext.Response.Write(json);
-        //    filterContext.HttpContext.Response.End();
-        //}
+        public override void OnAuthorization(AuthorizationContext filterContext)
+        {
+            //过滤验证
+            if (filterContext.ActionDescriptor.IsDefined(typeof(NoTokenCheckAttribute), true) ||
+               filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(typeof(NoTokenCheckAttribute), true))
+                return;
+            var token = filterContext.HttpContext.Request.Headers["token"];
+            if (!string.IsNullOrWhiteSpace(token))
+            {
+                var userId = int.Parse(token.Decrypt());
+                if (CheckToken(userId))
+                {
+                    SessionManager.Add(ConstString.UserLoginId, userId);
+                    return;
+                }
+            }
+            filterContext.HttpContext.Response.ContentType = "application/json";
+            var result = ResMessage.CreatMessage(ResultMessageEnum.Error, "无Token用户权限,请登录获取token");
+            string json = JsonConvert.SerializeObject(result);
+            filterContext.HttpContext.Response.Write(json);
+            filterContext.HttpContext.Response.End();
+        }
 
-
-        //public bool CheckToken(string userId)
-        //{
-        //    string userkey = User.GetKey(userId);
-        //    var user = CacheManager.GetData<Sys_User>(userkey);
-        //    return user != null;
-        //}
+        /// <summary>
+        /// 获取缓存用户信息
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public bool CheckToken(int userId)
+        {
+            return new UserInfoBLL().QueryUserInfoById(userId) != null;
+        }
 
 
 
