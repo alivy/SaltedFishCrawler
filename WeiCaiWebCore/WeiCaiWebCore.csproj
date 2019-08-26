@@ -154,6 +154,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Capital\CapitalController.cs" />
     <Compile Include="Controllers\FootballMatchController.cs" />
     <Compile Include="Controllers\BaseAction\RequestActionResult.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -223,6 +224,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
     <Folder Include="Views\Order\" />
     <Folder Include="Views\WebLogin\" />
   </ItemGroup>
