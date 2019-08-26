@@ -61,6 +61,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -160,6 +161,8 @@
     <Compile Include="Controllers\WebLoginAction\RegisterAction.cs" />
     <Compile Include="Controllers\WebLoginAction\LoginInAction.cs" />
     <Compile Include="Controllers\WebLoginController.cs" />
+    <Compile Include="Filter\OverallAuthorizeAttribute.cs" />
+    <Compile Include="Filter\CustomAttribute\ModelValidationAttribute.cs" />
     <Compile Include="Filter\CustomAttribute\NoTokenCheckAttribute.cs" />
     <Compile Include="Filter\CustomAttribute\CompressActionFilterAttribute.cs" />
     <Compile Include="Filter\CustomAttribute\CustomActionFilterAttribute.cs" />
@@ -170,6 +173,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RequestDateInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -219,7 +223,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Order\" />
     <Folder Include="Views\WebLogin\" />
   </ItemGroup>

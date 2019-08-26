@@ -13,6 +13,7 @@ using Utils.Expand;
 using WeiCaiWebCore.Filter;
 using WebSite.Filter;
 using WeiCaiWebCore.Controllers.WebLoginAction;
+using WeiCaiWebCore.Filter.CustomAttribute;
 
 namespace WeiCaiWebCore.Controllers
 {
@@ -26,21 +27,16 @@ namespace WeiCaiWebCore.Controllers
         /// </summary>
         /// <param name="userLogin"></param>
         /// <returns></returns>
-        [NoTokenCheck]
+        [ModelValidation, NoTokenCheck]
         public ActionResult LoginIn(ReqUserLogin userLogin)
         {
-            if (!ModelState.IsValid)
-            {
-                var errorMsg = ModelState.FristModelStateErrors().FirstOrDefault();
-                return Json(ResMessage.CreatMessage(ResultMessageEnum.ValidateError, errorMsg));
-            }
             var chekUser = user.CheckLogin(userLogin);
             if (!chekUser.Item1)
                 return Json(ResMessage.CreatMessage(ResultMessageEnum.AuthorityCheck, "用户或密码错误"));
             int userId = chekUser.Item2;
             SessionManager.Add(ConstString.UserLoginId, userId);
             var token = userId.ToString().Encrypt();
-            var obj = new { token = token };
+            var obj = new { token };
             return Json(ResMessage.CreatMessage(ResultMessageEnum.Success, "登录成功", obj));
         }
 
@@ -49,21 +45,16 @@ namespace WeiCaiWebCore.Controllers
         /// </summary>
         /// <param name="userLogin"></param>
         /// <returns></returns>
-        [NoTokenCheck]
+        [ModelValidation, NoTokenCheck]
         public ActionResult Register(ReqUserRegister userRegister)
         {
-            if (!ModelState.IsValid)
-            {
-                var errorMsg = ModelState.FristModelStateErrors().FirstOrDefault();
-                return Json(ResMessage.CreatMessage(ResultMessageEnum.ValidateError, errorMsg));
-            }
             var check = RegisterAction.UserRegisterCheck(userRegister);
             if (!check.Item1)
                 return Json(ResMessage.CreatMessage(ResultMessageEnum.AuthorityCheck, "用户手机号或邮箱已注册"));
             int userId = check.Item2;
             SessionManager.Add(ConstString.UserLoginId, userId);
             var token = userId.ToString().Encrypt();
-            var obj = new { token = token };
+            var obj = new { token };
             return Json(ResMessage.CreatMessage(ResultMessageEnum.Success, "注册成功", obj));
         }
 

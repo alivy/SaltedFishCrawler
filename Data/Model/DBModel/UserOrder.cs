@@ -1,110 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Data.Model.DBModel
 {
-    /// <summary>
-    /// 用户订单表
-    /// </summary>
-    public class UserOrder
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("UserOrder")]
+    public partial class UserOrder
     {
-        
         public int Id { get; set; }
-        /// <summary>
-        /// 订单号
-        /// </summary>
+
+       /// <summary>
+       /// ������
+       /// </summary>
+        [Required]
+        [StringLength(50)]
         public string OrderNo { get; set; }
 
         /// <summary>
-        /// 订单信息
+        /// �û�id
         /// </summary>
-        public List<PayProductInfo> PayProductInfos { get; set; }
+        [Required]
+        [StringLength(50)]
+        public int UserId { get; set; }
 
         /// <summary>
-        /// 应付金额
+        /// Ӧ�����
         /// </summary>
         public double CopePayMoney { get; set; }
 
         /// <summary>
-        /// 实付金额
+        /// ʵ�����
         /// </summary>
         public double ActualPayMoney { get; set; }
 
         /// <summary>
-        /// 订单状态 1.未支付 2.支付中 3.已支付
+        /// ����״̬ 1.δ֧�� 2.֧���� 3.��֧�� 4.�ѽӵ� 5.�ѳ�Ʊ 
         /// </summary>
         public int State { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// ����ʱ��
         /// </summary>
-        public DateTime CreateTime { get; set; }
-
-    }
-    /// <summary>
-    /// 购买商品信息
-    /// </summary>
-
-    public class PayProductInfo
-    {
-        /// <summary>
-        /// 商品详情
-        /// </summary>
-        public BetProductDetails ProductDetails { get; set; }
-
-        /// <summary>
-        /// 投注数量
-        /// </summary>
-        public int BetNum { get; set; }
-
-        /// <summary>
-        /// 投注金额
-        /// </summary>
-        public int BetMoney { get; set; }
-
-    }
-
-    /// <summary>
-    /// 投注产品详情
-    /// </summary>
-    public class BetProductDetails
-    {
-        /// <summary>
-        /// 产品id
-        /// </summary>
-        public int ProductId { get; set; }
-
-        /// <summary>
-        /// 产品名称
-        /// </summary>
-        public string ProductName { get; set; }
-
-        /// <summary>
-        /// 产品金额（一注价格）
-        /// </summary>
-        public double ProductMoney { get; set; }
-
-        /// <summary>
-        /// 彩种类型
-        /// </summary>
-        public int ColourTypes { get; set; }
-
-        /// <summary>
-        /// 彩种玩法
-        /// </summary>
-        public int ColourPalyType { get; set; }
-
-        /// <summary>
-        /// 投注信息
-        /// </summary>
-        public string BetInfo { get; set; }
-
-        /// <summary>
-        /// 产品描述
-        /// </summary>
-        public double ProductDescribe { get; set; }
+        public DateTime? CreateTime { get; set; }
     }
 }

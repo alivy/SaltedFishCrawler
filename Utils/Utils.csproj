@@ -83,11 +83,13 @@
     <Compile Include="Help\Md5Algorithm.cs" />
     <Compile Include="Help\MessageSend.cs" />
     <Compile Include="Help\NetworkHelper.cs" />
+    <Compile Include="Help\ObjectHelp.cs" />
     <Compile Include="Help\RegExpStr.cs" />
     <Compile Include="Help\RSAFromPkcs8.cs" />
     <Compile Include="Help\RSAHelper.cs" />
     <Compile Include="Help\SignHelper.cs" />
     <Compile Include="Help\StringHelper.cs" />
+    <Compile Include="Help\TimeHelper.cs" />
     <Compile Include="Help\ValidateHelper.cs" />
     <Compile Include="Help\WebHelper.cs" />
     <Compile Include="Help\XmlHelper.cs" />

@@ -38,10 +38,12 @@ namespace Data.Model.DBModel
 
         public virtual DbSet<tblHalfCourtNegativehafu> tblHalfCourtNegativehafu { get; set; }
 
+        public virtual DbSet<BetProductDetails> BetProductDetails { get; set; }
+        public virtual DbSet<OrderProductInfoMapping> OrderProductInfoMapping { get; set; }
+        public virtual DbSet<UserOrder> UserOrder { get; set; }
         public virtual DbSet<UserInfo> userInfo { get; set; }
+        public virtual DbSet<Q_Pulse> pulse { get; set; }
 
-        public virtual DbSet<Q_Pulse> puls { get; set; }
-        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }

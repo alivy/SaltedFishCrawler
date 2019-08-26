@@ -9,8 +9,11 @@ namespace WeiCaiWebCore
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            //全局权限验证
+            filters.Add(new OverallAuthorizeAttribute());
             //全局注册异常
             filters.Add(new CustomHandleErrorAttribute());
         }
+        
     }
 }
