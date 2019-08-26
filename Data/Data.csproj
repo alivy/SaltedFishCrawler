@@ -73,7 +73,6 @@
     <Compile Include="Model\DBModel\OrderProductInfoMapping.cs" />
     <Compile Include="Model\SSQModel\CrawlSSQInfo.cs" />
     <Compile Include="Model\DBModel\UserOrder.cs" />
-	<Compile Include="Model\SSQModel\CrawlSSQInfo.cs" />
 	<Compile Include="Model\ViewModel\Capital\ReqConsumptiondetails.cs" />    
 	<Compile Include="Model\ViewModel\Capital\ReqPersonalWallet.cs" />
     <Compile Include="Model\ViewModel\MathOrOdds\ResMatchOrOdds.cs" />

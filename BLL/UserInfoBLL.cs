@@ -54,7 +54,7 @@ namespace BLL
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        
+
         public UserInfo QueryUserInfoById(int userId)
         {
             string userkey = UserInfo.GetKey(userId);
@@ -69,7 +69,5 @@ namespace BLL
             }
             return user;
         }
-
-
     }
 }
