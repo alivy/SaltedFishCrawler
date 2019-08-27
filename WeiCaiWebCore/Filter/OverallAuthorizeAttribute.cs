@@ -17,7 +17,7 @@ namespace WeiCaiWebCore.Filter
     public class OverallAuthorizeAttribute : AuthorizeAttribute
     {
         /// <summary>
-        /// 权限验证
+        /// 全局权限验证
         /// </summary>
         /// <param name="filterContext"></param>
         public override void OnAuthorization(AuthorizationContext filterContext)

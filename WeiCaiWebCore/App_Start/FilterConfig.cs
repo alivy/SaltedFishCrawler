@@ -11,6 +11,10 @@ namespace WeiCaiWebCore
             filters.Add(new HandleErrorAttribute());
             //全局权限验证
             filters.Add(new OverallAuthorizeAttribute());
+
+            filters.Add(new OverallActionFilterAttribute());
+
+            
             //全局注册异常
             filters.Add(new CustomHandleErrorAttribute());
         }
