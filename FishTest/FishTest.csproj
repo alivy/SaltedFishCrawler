@@ -68,6 +68,7 @@
     <Compile Include="ResMessageTest.cs" />
     <Compile Include="Log4NetTest.cs" />
     <Compile Include="LotteryAnalysis.cs" />
+    <Compile Include="BonusCalculationTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
