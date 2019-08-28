@@ -45,8 +45,13 @@ namespace WeiCaiWebCore.Filter
             }
             filterContext.HttpContext.Response.ContentType = "application/json";
             var result = ResMessage.CreatMessage(ResultMessageEnum.Error, "无Token用户权限,请登录获取token");
-            string json = JsonConvert.SerializeObject(result);
-            filterContext.HttpContext.Response.Write(json);
+            filterContext.Result = new JsonResult()
+            {
+                Data = result,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+            //string json = JsonConvert.SerializeObject(result);
+            //filterContext.HttpContext.Response.Write(json);
             filterContext.HttpContext.Response.End();
             filterContext.HttpContext.Response.Close();
         }

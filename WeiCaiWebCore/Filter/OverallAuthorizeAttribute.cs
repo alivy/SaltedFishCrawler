@@ -29,8 +29,13 @@ namespace WeiCaiWebCore.Filter
             msg = checkCookie.Item2;
             filterContext.HttpContext.Response.ContentType = "application/json";
             var result = ResMessage.CreatMessage(ResultMessageEnum.Error, msg);
-            string json = JsonConvert.SerializeObject(result);
-            filterContext.HttpContext.Response.Write(json);
+            filterContext.Result = new JsonResult()
+            {
+                Data = result,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+            //string json = JsonConvert.SerializeObject(result);
+            //filterContext.HttpContext.Response.Write(json);
             filterContext.HttpContext.Response.End();
             filterContext.HttpContext.Response.Close();
         }

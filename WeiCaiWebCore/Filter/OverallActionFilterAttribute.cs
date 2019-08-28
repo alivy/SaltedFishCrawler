@@ -20,8 +20,8 @@ namespace WeiCaiWebCore.Filter
 
         public override void OnResultExecuted(ResultExecutedContext filterContext)
         {
-            filterContext.HttpContext.Response.AddHeader("Access-Control-Allow-Origin", filterContext.HttpContext.Request.RawUrl);
-            filterContext.HttpContext.Response.AddHeader("Access-Control-Allow-Credentials", "true");
+            //filterContext.HttpContext.Response.AddHeader("Access-Control-Allow-Origin", filterContext.HttpContext.Request.RawUrl);
+            //filterContext.HttpContext.Response.AddHeader("Access-Control-Allow-Credentials", "true");
         }
     }
 }
