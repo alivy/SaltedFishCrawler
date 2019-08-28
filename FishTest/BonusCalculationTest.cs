@@ -18,12 +18,13 @@ namespace FishTest
         {
             var result = new List<Betting>()
             {
-                new Betting { MatchId =1,PlayId=1,BettingId=1,Odds=2.1},
-                new Betting { MatchId =1,PlayId=1,BettingId=1,Odds=2.1},
-                new Betting { MatchId =1,PlayId=1,BettingId=1,Odds=2.1},
-                new Betting { MatchId =1,PlayId=1,BettingId=1,Odds=2.1},
-                new Betting { MatchId =1,PlayId=1,BettingId=1,Odds=2.1},
-                new Betting { MatchId =1,PlayId=1,BettingId=1,Odds=2.1}
+                new Betting { MatchId =1,PlayId=1,BettingId=1,Odds=2},
+                new Betting { MatchId =1,PlayId=1,BettingId=1,Odds=2.3},
+
+                new Betting { MatchId =2,PlayId=0,BettingId=1,Odds=2.1},
+
+                new Betting { MatchId =3,PlayId=1,BettingId=1,Odds=2.1},
+
             };
         }
     }
