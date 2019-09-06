@@ -518,7 +518,7 @@ namespace BLL
                     continue;
                 }
                 day.date = item.date;
-                day.week = item.num;
+                day.week = item.week;
                 race.id = item.id;
                 race.num = item.num;
                 race.date = item.date;
@@ -690,15 +690,15 @@ namespace BLL
                         new BaseBLL<tblWinOrLosehad>().AddEntity(new tblWinOrLosehad
                         {
                             id = item.id,
-                            a = item.had.a,
-                            d = item.had.d,
-                            h = item.had.h,
+                            a = item.had!=null ?item.had.a:"",
+                            d = item.had != null ? item.had.d : "",
+                            h = item.had != null ? item.had.h : "",
+                            o_type = item.had != null ? item.had.o_type : "",
+                            single = item.had != null ? item.had.single : "",
+                            fixedodds = item.had != null ? item.had.fixedodds : "",
                             b = item.hhad.a,
                             e = item.hhad.d,
                             i = item.hhad.h,
-                            o_type = item.had.o_type,
-                            single = item.had.single,
-                            fixedodds = item.had.fixedodds,
                             ro_type = item.hhad.o_type,
                             rsingle = item.hhad.single,
                             rfixedodds = item.hhad.fixedodds

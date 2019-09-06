@@ -12,6 +12,8 @@ namespace Data.Model.ViewModel.MathOrOdds
 
         public string num { get; set; }
 
+        public string week { get; set; }
+
         public string date { get; set; }
 
         public string time { get; set; }

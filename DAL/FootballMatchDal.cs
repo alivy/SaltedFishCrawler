@@ -173,7 +173,7 @@ namespace DAL
         {
             using (var db = DBContext.CreateContext())
             {
-                string sql = string.Format(@"SELECT a.id, a.num, a.date, a.time, a.h_cn_abbr
+                string sql = string.Format(@"SELECT a.id, REPLACE(datename(weekday, a.date), '星期', '周') week,a.num, a.date, a.time, a.h_cn_abbr
 	                                        , a.a_cn_abbr, a.h_order, a.a_order, a.weather, a.temperature
 	                                        , a.weather_pic, a.l_cn, a.l_cn_abbr, b.a, b.d
 	                                        , b.h, b.b, b.e, b.i, c.s0 AS ss0
