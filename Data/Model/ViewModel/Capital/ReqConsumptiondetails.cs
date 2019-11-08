@@ -10,11 +10,6 @@ namespace Data.Model.ViewModel.Capital
    public  class ReqConsumptiondetails
     {
         /// <summary>
-        /// 用户名
-        /// </summary>
-        [Required(ErrorMessage = "用户名不能为空")]
-        public string UserName { get; set; }
-        /// <summary>
         /// 订单号
         /// </summary>
         public string OrderNo { get; set; }
