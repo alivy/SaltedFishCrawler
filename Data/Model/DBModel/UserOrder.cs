@@ -22,7 +22,6 @@ namespace Data.Model.DBModel
         /// ”√ªßid
         /// </summary>
         [Required]
-        [StringLength(50)]
         public int UserId { get; set; }
 
         /// <summary>

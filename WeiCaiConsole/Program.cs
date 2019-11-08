@@ -36,8 +36,9 @@ namespace WeiCaiConsole
                 //x.WithIntervalInHours(1).RepeatForever();
                 ////按分钟执行 n+1次
                 //x.WithIntervalInMinutes(1).WithRepeatCount(50);
+                x.WithIntervalInMinutes(2).RepeatForever();
                 //按分钟执行 永远执行
-                x.WithIntervalInSeconds(10).RepeatForever();
+                //x.WithIntervalInSeconds(1).RepeatForever();
             };
             ExecutePlan.StartTime<TwoDogsJob>(action);
         }

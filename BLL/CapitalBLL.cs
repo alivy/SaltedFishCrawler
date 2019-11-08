@@ -44,13 +44,13 @@ namespace BLL
         /// </summary>
         /// <param name="req"></param>
         /// <returns></returns>
-        public bool Recharge(ReqConsumptiondetails req)
+        public bool Recharge(ReqConsumptiondetails req,string userid)
         {
             if (req != null)
             {
                 new BaseBLL<Consumptiondetails>().AddEntity(new Consumptiondetails
                 {
-                  UserName=req.UserName,
+                  UserName= userid,
                   OrderNo=req.OrderNo,
                   BankNo=req.BankNo,
                   Amount=req.Amount,
@@ -70,13 +70,13 @@ namespace BLL
         /// </summary>
         /// <param name="req"></param>
         /// <returns></returns>
-        public bool CashAdvance(ReqConsumptiondetails req)
+        public bool CashAdvance(ReqConsumptiondetails req,string userid)
         {
             if (req != null)
             {
                 new BaseBLL<Consumptiondetails>().AddEntity(new Consumptiondetails
                 {
-                    UserName = req.UserName,
+                    UserName = userid,
                     OrderNo = req.OrderNo,
                     BankNo = req.BankNo,
                     Amount = req.Amount,
@@ -91,13 +91,13 @@ namespace BLL
             }
         }
 
-        public bool Deduction(ReqConsumptiondetails req)
+        public bool Deduction(ReqConsumptiondetails req,string userid)
         {
             if (req != null)
             {
                 new BaseBLL<Consumptiondetails>().AddEntity(new Consumptiondetails
                 {
-                    UserName = req.UserName,
+                    UserName = userid,
                     OrderNo = req.OrderNo,
                     BankNo = req.BankNo,
                     Amount = req.Amount,
@@ -118,29 +118,27 @@ namespace BLL
         /// </summary>
         /// <param name="UserName"></param>
         /// <param name="Amount"></param>
-        public void AddBalance(string UserName,decimal Amount)
+        public bool AddBalance(string UserName,decimal Amount)
         {
             var addBalance = new BaseBLL<PersonalWallet>().FirstOrDefault(x => x.UserName.Equals(UserName));
             if (addBalance != null)
             {
                 addBalance.Balance = addBalance.Balance + Amount;
                 new BaseBLL<PersonalWallet>().UpdateEntity(addBalance);
+                return true;
             }
+            return false;
         }
-        public (bool,string) SubtractBalance(string UserName, decimal Amount)
+        public bool SubtractBalance(string UserName, decimal Amount)
         {
             var addBalance = new BaseBLL<PersonalWallet>().FirstOrDefault(x => x.UserName.Equals(UserName));
             if (addBalance != null)
             {
-                if (addBalance.Balance < Amount)
-                {
-                    return (false,"余额不足");
-                }
                 addBalance.Balance = addBalance.Balance - Amount;
                 new BaseBLL<PersonalWallet>().UpdateEntity(addBalance);
-                return (true,"成功");
+                return true;
             }
-            return (false,"失败");
+            return false;
         }
     }
 }

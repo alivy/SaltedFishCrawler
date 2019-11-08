@@ -17,7 +17,7 @@ namespace WeiCaiWebCore.Filter
     public class OverallAuthorizeAttribute : AuthorizeAttribute
     {
         /// <summary>
-        /// 权限验证
+        /// 全局权限验证
         /// </summary>
         /// <param name="filterContext"></param>
         public override void OnAuthorization(AuthorizationContext filterContext)
@@ -29,8 +29,13 @@ namespace WeiCaiWebCore.Filter
             msg = checkCookie.Item2;
             filterContext.HttpContext.Response.ContentType = "application/json";
             var result = ResMessage.CreatMessage(ResultMessageEnum.Error, msg);
-            string json = JsonConvert.SerializeObject(result);
-            filterContext.HttpContext.Response.Write(json);
+            filterContext.Result = new JsonResult()
+            {
+                Data = result,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+            //string json = JsonConvert.SerializeObject(result);
+            //filterContext.HttpContext.Response.Write(json);
             filterContext.HttpContext.Response.End();
             filterContext.HttpContext.Response.Close();
         }
@@ -44,12 +49,13 @@ namespace WeiCaiWebCore.Filter
         {
             string strCooike = string.Empty;
             string cookieKey = "uuid";
-            var uuid = HttpContext.Current.Request.Cookies[cookieKey];
+            //var uuid = HttpContext.Current.Request.Cookies[cookieKey];
+            //var date = uuid.Expires;
+            var uuid =  filterContext.HttpContext.Request.Headers[cookieKey];
             if (uuid != null)
-                strCooike = HttpContext.Current.Request.Cookies[cookieKey].Value ?? string.Empty;
+                strCooike = uuid ?? string.Empty;
             if (string.IsNullOrWhiteSpace(strCooike))
                 return (false, "cookie错误");
-            var date = uuid.Expires;
             var controller = filterContext.RouteData.Values["controller"].ToString();
             var action = filterContext.RouteData.Values["action"].ToString();
             var cacheCookie = CacheManager.GetData<List<RequestDateInfo>>(strCooike) ?? new List<RequestDateInfo>();
@@ -66,7 +72,6 @@ namespace WeiCaiWebCore.Filter
             }
             cacheCookie.Add(new RequestDateInfo { RequestDate = DateTime.Now, ControllerName = controller, ActionName = action });
             CacheManager.Add(strCooike, cacheCookie, 600);
-
             return (true, string.Empty);
         }
     }

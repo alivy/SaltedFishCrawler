@@ -69,6 +69,7 @@
     <Compile Include="Log4NetTest.cs" />
     <Compile Include="LotteryAnalysis.cs" />
     <Compile Include="BonusCalculationTest.cs" />
+    <Compile Include="ShengDaTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

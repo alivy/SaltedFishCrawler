@@ -62,19 +62,23 @@
     <Compile Include="Enums\ResultMessageEnum.cs" />
     <Compile Include="Enums\FootballGameEnum\FootballGameTypeEnum.cs" />
     <Compile Include="Enums\LotteryTypeEnum.cs" />
-
-
+    <Compile Include="Model\DBModel\FiveMinuteLottery.cs" />
     <Compile Include="Model\DBModel\Consumptiondetails.cs" />
     <Compile Include="Model\DBModel\PersonalWallet.cs" />
-	<Compile Include="Model\DBModel\BetProductDetails.cs" />
-	<Compile Include="Model\DBModel\Q_Pulse.cs" />
+    <Compile Include="Model\DBModel\BetProductDetails.cs" />
+    <Compile Include="Model\DBModel\Q_Pulse.cs" />
     <Compile Include="Model\DBModel\UserInfo.cs" />
     <Compile Include="Model\DBModel\UserOrders.cs" />
     <Compile Include="Model\DBModel\OrderProductInfoMapping.cs" />
+    <Compile Include="Model\ShengDa\Requset\BaseReq.cs" />
+    <Compile Include="Model\ShengDa\Requset\ReqFiveMinuteLottery.cs" />
+    <Compile Include="Model\ShengDa\Requset\ReqLogin.cs" />
+    <Compile Include="Model\ShengDa\Response\BaseRes.cs" />
+    <Compile Include="Model\ShengDa\Response\ResLogin.cs" />
     <Compile Include="Model\SSQModel\CrawlSSQInfo.cs" />
     <Compile Include="Model\DBModel\UserOrder.cs" />
-	<Compile Include="Model\ViewModel\Capital\ReqConsumptiondetails.cs" />    
-	<Compile Include="Model\ViewModel\Capital\ReqPersonalWallet.cs" />
+    <Compile Include="Model\ViewModel\Capital\ReqConsumptiondetails.cs" />
+    <Compile Include="Model\ViewModel\Capital\ReqPersonalWallet.cs" />
     <Compile Include="Model\ViewModel\MathOrOdds\ResMatchOrOdds.cs" />
     <Compile Include="Model\ViewModel\ReqBuyFullLottery.cs" />
     <Compile Include="Model\ViewModel\RequestResult.cs" />

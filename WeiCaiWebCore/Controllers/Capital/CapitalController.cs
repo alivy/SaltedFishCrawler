@@ -8,10 +8,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Utils.Cache;
 using Utils.Expand;
+using WeiCaiWebCore.Filter;
 
 namespace WeiCaiWebCore.Controllers.Capital
 {
+    [TokenAuthorize]
     public class CapitalController : Controller
     {
         /// <summary>
@@ -21,32 +24,45 @@ namespace WeiCaiWebCore.Controllers.Capital
         /// <returns></returns>
         public ActionResult Recharge(ReqConsumptiondetails req)
         {
-            if (!ModelState.IsValid)
+            object Lock = new object();
+            lock (Lock)
             {
-                var errorMsg = ModelState.FristModelStateErrors().FirstOrDefault();
-                return Json(ResMessage.CreatMessage(ResultMessageEnum.ValidateError, errorMsg));
+                if (!ModelState.IsValid)
+                {
+                    var errorMsg = ModelState.FristModelStateErrors().FirstOrDefault();
+                    return Json(ResMessage.CreatMessage(ResultMessageEnum.ValidateError, errorMsg));
+                }
+                if (req != null)
+                {
+                    var userId = Convert.ToInt32(SessionManager.Get(ConstString.UserLoginId).ToString());
+                    var userinfo = new BaseBLL<UserInfo>().FirstOrDefault(x => x.Id.Equals(userId));
+                    var personalWallet = new BaseBLL<PersonalWallet>().FirstOrDefault(x => x.UserName.Equals(userId.ToString()));
+                    if (userinfo == null)
+                    {
+                        return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "该用户不存在"));
+                    }
+                    var bll = new CapitalBLL();
+                    if (req.Amount <= 0)
+                    {
+                        return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "充值金额不能小于等于0"));
+                    }
+                    if (personalWallet == null)
+                    {
+                        return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "用户钱包不存在"));
+                    }
+                    bool bl = bll.Recharge(req, userId.ToString());
+                    if (bl)
+                    {
+                        bool blz = bll.AddBalance(userId.ToString(), req.Amount);
+                        if (blz)
+                        {
+                            return Json(ResMessage.CreatMessage(ResultMessageEnum.Success, "充值成功"));
+                        }
+                    }
+                }
+                return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "充值失败"));
             }
-            if (req != null)
-            {
-                var userinfo = new BaseBLL<UserInfo>().FirstOrDefault(x => x.UserName.Equals(req.UserName));
-                if (userinfo == null)
-                {
-                    return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "该用户不存在"));
-                }
-                var bll = new CapitalBLL();
-                if (req.Amount <= 0)
-                {
-                    return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "充值金额不能小于等于0"));
-                }
-                bool bl = bll.Recharge(req);
-                if (bl)
-                {
-                    bll.AddBalance(req.UserName, req.Amount);
-                    return Json(ResMessage.CreatMessage(ResultMessageEnum.Success, "充值成功"));
-                }
-
-            }
-            return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "充值失败"));
+           
         }
 
         /// <summary>
@@ -63,7 +79,9 @@ namespace WeiCaiWebCore.Controllers.Capital
             }
             if (req != null)
             {
-                var userinfo = new BaseBLL<UserInfo>().FirstOrDefault(x => x.UserName.Equals(req.UserName));
+                var userId = Convert.ToInt32(SessionManager.Get(ConstString.UserLoginId).ToString());
+                var userinfo = new BaseBLL<UserInfo>().FirstOrDefault(x => x.Id.Equals(userId));
+                var personalWallet = new BaseBLL<PersonalWallet>().FirstOrDefault(x => x.UserName.Equals(userId.ToString()));
                 if (userinfo == null)
                 {
                     return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "该用户不存在"));
@@ -73,23 +91,23 @@ namespace WeiCaiWebCore.Controllers.Capital
                 {
                     return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "提现金额不能小于等于0"));
                 }
-                bool bl = bll.CashAdvance(req);
+                if (personalWallet == null)
+                {
+                    return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "用户钱包不存在"));
+                }
+                if (personalWallet.Balance < req.Amount)
+                {
+                    return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "余额不足"));
+                }
+                bool bl = bll.CashAdvance(req,userId.ToString());
                 if (bl)
                 {
-                    bool blz = false;
-                    string msg;
-                    (blz, msg) =bll.SubtractBalance(req.UserName, req.Amount);
+                    bool blz =bll.SubtractBalance(userId.ToString(), req.Amount);
                     if (blz)
                     {
                         return Json(ResMessage.CreatMessage(ResultMessageEnum.Success, "提现成功"));
                     }
-                    else
-                    {
-                        return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, msg));
-                    }
-                    
                 }
-
             }
             return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "提现失败"));
         }
@@ -103,7 +121,9 @@ namespace WeiCaiWebCore.Controllers.Capital
             }
             if (req != null)
             {
-                var userinfo = new BaseBLL<UserInfo>().FirstOrDefault(x => x.UserName.Equals(req.UserName));
+                var userId =Convert.ToInt32(SessionManager.Get(ConstString.UserLoginId).ToString());
+                var userinfo = new BaseBLL<UserInfo>().FirstOrDefault(x => x.Id.Equals(userId));
+                var personalWallet = new BaseBLL<PersonalWallet>().FirstOrDefault(x => x.UserName.Equals(userId.ToString()));
                 if (userinfo == null)
                 {
                     return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "该用户不存在"));
@@ -113,23 +133,23 @@ namespace WeiCaiWebCore.Controllers.Capital
                 {
                     return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "金额不能小于等于0"));
                 }
-                bool bl = bll.Deduction(req);
+                if(personalWallet==null)
+                {
+                    return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "用户钱包不存在"));
+                }
+                if (personalWallet.Balance < req.Amount)
+                {
+                    return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "余额不足"));
+                }
+                bool bl = bll.Deduction(req,userId.ToString());
                 if (bl)
                 {
-                    bool blz = false ;
-                    string msg;
-                    (blz, msg) = bll.SubtractBalance(req.UserName, req.Amount);
+                    bool blz = bll.SubtractBalance(userId.ToString(), req.Amount);
                     if (blz)
                     {
                         return Json(ResMessage.CreatMessage(ResultMessageEnum.Success, "扣款成功"));
                     }
-                    else
-                    {
-                        return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, msg));
-                    }
-                  
                 }
-
             }
             return Json(ResMessage.CreatMessage(ResultMessageEnum.Error, "扣款失败"));
         }

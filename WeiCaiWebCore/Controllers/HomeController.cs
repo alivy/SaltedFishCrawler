@@ -30,6 +30,7 @@ namespace WeiCaiWebCore.Controllers
         /// 接口A
         /// </summary>
         /// <returns></returns>
+      // [EnableCors(origins: "https://www.baidu.com/",headers:"*",methods: "GET, POST, PUT, DELETE, OPTIONS")]
         public ActionResult Index()
         {
             var obj = new { a = 1 };

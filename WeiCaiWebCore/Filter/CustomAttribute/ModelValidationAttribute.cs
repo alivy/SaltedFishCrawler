@@ -23,13 +23,21 @@ namespace WeiCaiWebCore.Filter.CustomAttribute
            
             var modelState = actionContext.Controller.ViewData.ModelState;
             if (modelState.IsValid)
+            {
+                base.OnActionExecuting(actionContext);
                 return;
+            }
             var errorMsg = modelState.FristModelStateErrors().FirstOrDefault();
             actionContext.HttpContext.Response.ContentType = "application/json";
             base.OnActionExecuting(actionContext);
             var result = ResMessage.CreatMessage(ResultMessageEnum.ValidateError, errorMsg);
-            string json = JsonConvert.SerializeObject(result);
-            actionContext.HttpContext.Response.Write(json);
+            actionContext.Result = new JsonResult()
+            {
+                Data = result,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+            actionContext.Result.ExecuteResult(actionContext.Controller.ControllerContext);
+            actionContext.HttpContext.Response.StatusCode = 504;
             actionContext.HttpContext.Response.End();
             actionContext.HttpContext.Response.Close();
             actionContext.HttpContext.Response.Redirect("/Login/Index");
