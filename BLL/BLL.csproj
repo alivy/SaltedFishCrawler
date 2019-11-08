@@ -58,6 +58,7 @@
     <Compile Include="CapitalBLL.cs" />
     <Compile Include="FootballMatchBLL.cs" />
     <Compile Include="PulseBLL.cs" />
+    <Compile Include="ShengDaLottery.cs" />
     <Compile Include="UserInfoBLL.cs" />
     <Compile Include="JieCaiTableBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -49,6 +49,8 @@ namespace Data.Model.DBModel
         public virtual DbSet<PersonalWallet> personalWallet { get; set; }
         public virtual DbSet<Consumptiondetails> consumptiondetails { get; set; }
 
+        public virtual DbSet<FiveMinuteLottery> FiveMinuteLottery { get; set; }
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }
