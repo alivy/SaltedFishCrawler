@@ -20,16 +20,21 @@ namespace WeiCaiWebCore.Filter.CustomAttribute
         /// <param name="actionContext"></param>
         public override void OnActionExecuting(ActionExecutingContext actionContext)
         {
+           
             var modelState = actionContext.Controller.ViewData.ModelState;
             if (modelState.IsValid)
                 return;
             var errorMsg = modelState.FristModelStateErrors().FirstOrDefault();
             actionContext.HttpContext.Response.ContentType = "application/json";
+            base.OnActionExecuting(actionContext);
             var result = ResMessage.CreatMessage(ResultMessageEnum.ValidateError, errorMsg);
             string json = JsonConvert.SerializeObject(result);
             actionContext.HttpContext.Response.Write(json);
             actionContext.HttpContext.Response.End();
             actionContext.HttpContext.Response.Close();
+            actionContext.HttpContext.Response.Redirect("/Login/Index");
+            actionContext.Result = new RedirectResult("/Login/index");
+
         }
     }
 }

@@ -35,7 +35,6 @@ namespace WeiCaiWebCore.Controllers
             var obj = new { a = 1 };
             ///封装泛型json数据
             return RequestAction(obj);
-            return Json(obj);
         }
 
         public ActionResult About()

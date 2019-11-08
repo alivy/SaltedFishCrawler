@@ -19,11 +19,10 @@ namespace FishTest
             var result = new List<Betting>()
             {
                 new Betting { MatchId =1,PlayId=1,BettingId=1,Odds=2.1},
-                new Betting { MatchId =1,PlayId=1,BettingId=1,Odds=2.1},
-                new Betting { MatchId =1,PlayId=1,BettingId=1,Odds=2.1},
-                new Betting { MatchId =1,PlayId=1,BettingId=1,Odds=2.1},
-                new Betting { MatchId =1,PlayId=1,BettingId=1,Odds=2.1},
-                new Betting { MatchId =1,PlayId=1,BettingId=1,Odds=2.1}
+                new Betting { MatchId =2,PlayId=0,BettingId=1,Odds=2.1},
+                new Betting { MatchId =3,PlayId=1,BettingId=1,Odds=2.1},
+                new Betting { MatchId =1,PlayId=0,BettingId=1,Odds=2.1},
+            
             };
         }
     }
@@ -32,7 +31,7 @@ namespace FishTest
     {
         /// <summary>
         /// 赛事Id 
-        /// </summary>
+        /// </summary>  
         public int MatchId { get; set; }
         /// <summary>
         /// 玩法Id  0让球胜平负  1胜平负
