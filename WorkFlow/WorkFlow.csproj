@@ -57,6 +57,7 @@
     <Compile Include="FootballGameCrawler\ISearch.cs" />
     <Compile Include="OrderNum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShengDaLottery\FiveMinuteLotterySearch.cs" />
     <Compile Include="ShengDaLottery\ShengDaUrl.cs" />
     <Compile Include="ShengDaLottery\TimeHonored.cs" />
     <Compile Include="SSQCrawler.cs" />

@@ -64,11 +64,11 @@ namespace FishTest
             {
                 var reqfmlResult = new ReqFiveMinuteLotteryResult() { IssueCode = item.issue_no,  OpenTime = item.open_time };
                 var list2 = new List<string>(item.lotteryopen_no.Split(new[] { "," }, StringSplitOptions.None));
-                reqfmlResult.One = list2[0];
-                reqfmlResult.Two = list2[1];
-                reqfmlResult.Three = list2[2];
-                reqfmlResult.Four = list2[3];
-                reqfmlResult.Five = list2[4];
+                //reqfmlResult.One = list2[0];
+                //reqfmlResult.Two = list2[1];
+                //reqfmlResult.Three = list2[2];
+                //reqfmlResult.Four = list2[3];
+                //reqfmlResult.Five = list2[4];
                 reqfmlResultList.Add(reqfmlResult);
             }
 

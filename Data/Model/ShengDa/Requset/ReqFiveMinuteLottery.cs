@@ -20,15 +20,15 @@ namespace Data.Model.ShengDa.Requset
     {
         public string IssueCode { get; set; }
 
-        public string One { get; set; }
+        public int One { get; set; }
 
-        public string Two { get; set; }
+        public int Two { get; set; }
 
-        public string Three { get; set; }
+        public int Three { get; set; }
 
-        public string Four { get; set; }
+        public int Four { get; set; }
 
-        public string Five { get; set; }
+        public int Five { get; set; }
 
         public string OpenTime { get; set; }
     }

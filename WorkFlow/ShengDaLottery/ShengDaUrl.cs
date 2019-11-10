@@ -26,5 +26,10 @@ namespace WorkFlow.ShengDaLottery
         /// 彩票相关信息查询
         /// </summary>
         public const string LotteryQuery = "https://shengdaweb.0451pz.com/Home/Buy";
+
+        /// <summary>
+        /// 彩票投注结果信息查询
+        /// </summary>
+        public const string BettingResultQuery = "https://shengdaweb.0451pz.com/Home/BettingMain";
     }
 }

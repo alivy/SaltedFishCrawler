@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL
+namespace DAL
 {
-    public class ShengDaLotter : BaseBLL<FiveMinuteLottery>
+    public class FiveMinuteLotteryDal : BaseDal<FiveMinuteLottery>
     {
 
     }
