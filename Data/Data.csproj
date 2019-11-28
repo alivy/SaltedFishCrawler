@@ -62,9 +62,11 @@
     <Compile Include="Enums\ResultMessageEnum.cs" />
     <Compile Include="Enums\FootballGameEnum\FootballGameTypeEnum.cs" />
     <Compile Include="Enums\LotteryTypeEnum.cs" />
+    <Compile Include="Enums\ShengDaEnum\PrizeResultsEnum.cs" />
     <Compile Include="Enums\ShengDaEnum\FiveMinLotteryBettingNumberEnum.cs" />
     <Compile Include="Enums\ShengDaEnum\LotteryCodeEnum.cs" />
     <Compile Include="Enums\ShengDaEnum\TimeTypeEnum.cs" />
+    <Compile Include="Model\DBModel\OneMinuteLottery.cs" />
     <Compile Include="Model\DBModel\FiveMinuteLottery.cs" />
     <Compile Include="Model\DBModel\Consumptiondetails.cs" />
     <Compile Include="Model\DBModel\PersonalWallet.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="Model\DBModel\OrderProductInfoMapping.cs" />
     <Compile Include="Model\FiveMinuteLotteryModel\FiveMinuteResultAnalysis.cs" />
     <Compile Include="Model\FiveMinuteLotteryModel\FiveMinuteLotteryPrizeDataAnalysis.cs" />
+    <Compile Include="Model\ShengDa\NoPrizeBetting.cs" />
     <Compile Include="Model\ShengDa\Requset\BaseReq.cs" />
     <Compile Include="Model\ShengDa\Requset\PlaceOrderRequest.cs" />
     <Compile Include="Model\ShengDa\Requset\ReqFiveMinuteLottery.cs" />

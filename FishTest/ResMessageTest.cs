@@ -53,8 +53,6 @@ namespace FishTest
         {
             int examExplain = 20190711;
             var result1 = Convert.ToDateTime(examExplain.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-
-
             string date = "action=GetLotteryOpen20List&lottery_code=1004&data_count=20&session_id=dbd298dff709486288df429e42504926";
             var reult = HttpMethods.HttpPost("https://shengdaweb.0451pz.com/Home/Buy", date);
             var baseObj = JsonConvert.DeserializeObject<BaseRes<string>>(reult);
@@ -71,7 +69,6 @@ namespace FishTest
                 //reqfmlResult.Five = list2[4];
                 reqfmlResultList.Add(reqfmlResult);
             }
-
         }
     }
 }

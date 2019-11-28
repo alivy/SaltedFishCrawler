@@ -11,25 +11,33 @@ namespace WorkFlow.ShengDaLottery
     /// </summary>
     public class ShengDaUrl
     {
+        public const string DomainName = "http://shengdaweb.u5n2k.cn";
         /// <summary>
         /// 登录地址
         /// </summary>
-        public const string LogIn = "https://shengdaweb.0451pz.com/Home/LoginMain";
+        public static string LogIn = $"{DomainName}/Home/LoginMain";
 
         /// <summary>
         /// 彩票类型及编号信息
         /// </summary>
-        public const string LotteryCodeInfo = "https://shengdaweb.0451pz.com/Home/Index";
+        public static string LotteryCodeInfo = $"{DomainName}/Home/Index";
+
 
 
         /// <summary>
         /// 彩票相关信息查询
         /// </summary>
-        public const string LotteryQuery = "https://shengdaweb.0451pz.com/Home/Buy";
+        public static string LotteryQuery = $"{DomainName}/Home/Buy";
 
         /// <summary>
         /// 彩票投注结果信息查询
         /// </summary>
-        public const string BettingResultQuery = "https://shengdaweb.0451pz.com/Home/BettingMain";
+        public static string BettingResultQuery = $"{DomainName}/Home/BettingMain";
+
+        /// <summary>
+        /// 彩票投注
+        /// </summary>
+        public static string AddBetting = $"{DomainName}/Home/AddBetting";
+
     }
 }

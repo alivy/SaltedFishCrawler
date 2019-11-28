@@ -90,4 +90,16 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BBA3388C-9788-4035-AC9F-58256C03BD76}
 	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBA3388C-9788-4035-AC9F-58256C03BD76}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBA3388C-9788-4035-AC9F-58256C03BD76}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBA3388C-9788-4035-AC9F-58256C03BD76}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBA3388C-9788-4035-AC9F-58256C03BD76}
+	EndGlobalSection
 EndGlobal

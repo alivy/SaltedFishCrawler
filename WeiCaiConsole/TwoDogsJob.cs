@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Utils.Help.Http;
+using WorkFlow.ShengDaLottery;
 
 namespace WeiCaiConsole
 {
@@ -31,25 +32,31 @@ namespace WeiCaiConsole
         /// </summary>
         public void Process()
         {
+           var fiveMinuteLottery =  new FiveMinuteLotteryBLL();
+            fiveMinuteLottery.FiveMinuteLotteryDataSync(session_id);
+            Console.WriteLine("成功同步五分彩数据。。。。!");
+            fiveMinuteLottery.OneMinuteLotteryDataSync(session_id);
+            Console.WriteLine("成功同步分分彩数据。。。。!");
             //var football = new FootballMatchBLL();
             //football.SysnWinOrLose();
             //football.SysnTotalGoals();
             //football.SysnMatchScore();
             //football.SysnHalfCourtNegative();
-            FiveMinuteLottery();
-            Console.WriteLine("二狗子过来吃屎了!");
+            //FiveMinuteLotteryDataSync();
+            Console.WriteLine("正在处理数据。。。。!");
         }
+
         /// <summary>
-        /// 五分彩
+        /// 五分彩数据同步
         /// </summary>
-        public void FiveMinuteLottery()
+        public void FiveMinuteLotteryDataSync()
         {
             try
             {
                 var dataStr = DateTime.Now.ToString("yyyyMMdd");
                 var FiveMinuteLotteryList = new BaseBLL<FiveMinuteLottery>().LoadEntities(x => x.ID.Contains(dataStr)).ToList();
                 string date = $"action=GetLotteryOpen20List&lottery_code=1004&data_count=20&session_id={session_id}";
-                var reult = HttpMethods.HttpPost("https://shengdaweb.0451pz.com/Home/Buy", date);
+                var reult = HttpMethods.HttpPost(ShengDaUrl.LotteryQuery, date);
                 var baseObj = JsonConvert.DeserializeObject<BaseRes<string>>(reult);
                 var fmlObj = JsonConvert.DeserializeObject<List<ReqFiveMinuteLottery>>(baseObj.data);
                 var reqfmlResultList = new List<FiveMinuteLottery>();
@@ -74,14 +81,9 @@ namespace WeiCaiConsole
             {
                 Console.WriteLine($"报错了，消息为{e.Message}");
             }
-
         }
 
 
 
-
     }
-
-
-
 }

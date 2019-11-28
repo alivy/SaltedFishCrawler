@@ -79,6 +79,10 @@
       <Project>{89443ED2-27FD-4460-8F4F-7033CF9FFF26}</Project>
       <Name>Utils</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WorkFlow\WorkFlow.csproj">
+      <Project>{24F876AF-86B1-400A-ABE9-074D5361AF88}</Project>
+      <Name>WorkFlow</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

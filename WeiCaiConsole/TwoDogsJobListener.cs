@@ -13,21 +13,8 @@ namespace WeiCaiConsole
     /// </summary>
     public class TwoDogsJobListener : IJobListener
     {
-        public string Name => "二狗子";
+        public string Name => "五分彩";
 
-        /// <summary>
-        /// 当Quartz.iJob细节即将执行时由Quartz.isscheduler调用
-        ///（发生了相关的quartz.itrigger），但quartz.itrigger的听众否决了这是执行。
-        /// </summary>
-        /// <returns></returns>
-        public Task JobExecutionVetoed(IJobExecutionContext context, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return Task.Run(() =>
-            {
-                Console.WriteLine("*******************************");
-                Console.WriteLine($"{Name}吃屎");
-            });
-        }
 
         /// <summary>
         ///  在即将执行quartz.i作业详细信息时由quartz.isscheduler调用
@@ -40,9 +27,23 @@ namespace WeiCaiConsole
             return Task.Run(() =>
             {
                 Console.WriteLine("*******************************");
-                Console.WriteLine($"{Name}吃屎前准备就绪");
+                Console.WriteLine($"{Name}程序执行准备");
             });
 
+        }
+
+        /// <summary>
+        /// 当Quartz.iJob细节即将执行时由Quartz.isscheduler调用
+        ///（发生了相关的quartz.itrigger），但quartz.itrigger的听众否决了这是执行。
+        /// </summary>
+        /// <returns></returns>
+        public Task JobExecutionVetoed(IJobExecutionContext context, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return Task.Run(() =>
+            {
+                Console.WriteLine("*******************************");
+                Console.WriteLine($"{Name}程序启动成功");
+            });
         }
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace WeiCaiConsole
         {
             return Task.Run(() =>
             {
-                Console.WriteLine($"{Name}吃完一坨屎了");
+                Console.WriteLine($"{Name}主程序执行完毕");
                 Console.WriteLine("*******************************");
             });
         }

@@ -50,7 +50,9 @@ namespace Data.Model.DBModel
         public virtual DbSet<Consumptiondetails> consumptiondetails { get; set; }
 
         public virtual DbSet<FiveMinuteLottery> FiveMinuteLottery { get; set; }
-        
+
+        public virtual DbSet<OneMinuteLottery> OneMinuteLottery { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }

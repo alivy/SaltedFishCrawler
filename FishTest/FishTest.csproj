@@ -70,6 +70,7 @@
     <Compile Include="LotteryAnalysis.cs" />
     <Compile Include="BonusCalculationTest.cs" />
     <Compile Include="ShengDaTest.cs" />
+    <Compile Include="FiveMinuteLotteryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

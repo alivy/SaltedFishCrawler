@@ -19,6 +19,12 @@ namespace Data.Enums.ShengDaEnum
         /// <summary>
         /// 五分时时彩
         /// </summary>
-        FiveMinuteLottery = 1004
+        FiveMinuteLottery = 1004,
+
+
+        /// <summary>
+        /// 分分时时彩
+        /// </summary>
+        OneMinuteLottery = 1002
     }
 }

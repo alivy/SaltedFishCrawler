@@ -16,7 +16,7 @@ namespace FishTest
         [TestMethod]
         public void FiveMinuteOrder()
         {
-          //  FiveMinuteLotterySearch.FiveMinuteOrder();
+            //  FiveMinuteLotterySearch.FiveMinuteOrder();
         }
 
         [TestMethod]
@@ -24,7 +24,7 @@ namespace FishTest
         {
             var date = DateTime.Now.AddDays(-1);
             FiveMinuteLotteryBLL lotteryBLL = new FiveMinuteLotteryBLL();
-            var result = lotteryBLL.MaxSingleDoubleOrSize(date);
+            var result = lotteryBLL.MaxSingleDoubleOrSize(true, date);
         }
     }
 }

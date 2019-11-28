@@ -11,18 +11,18 @@ namespace Data.Model.ShengDa.Requset
     /// </summary>
     public class PlaceOrderRequest
     {
-        public Data data { get; set; }
+        public Datas BettingData { get; set; }
 
         public string session_id { get; set; }
     }
 
-    public class Data
+    public class Datas
     {
-        public BettingData data { get; set; }
+        public List<BettingDataInfo> BettingData { get; set; }
     }
 
 
-    public class BettingData
+    public class BettingDataInfo
     {
         /// <summary>
         /// 彩种编号
@@ -45,16 +45,16 @@ namespace Data.Model.ShengDa.Requset
         /// <summary>
         /// 投注金额
         /// </summary>
-        public string betting_money { get; set; }
+        public int betting_money { get; set; }
 
         /// <summary>
         /// 投注注数
         /// </summary>
-        public string betting_count { get; set; }
+        public int betting_count { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string client_type { get; set; }
+        public int client_type { get; set; }
 
     }
 }
